@@ -1,0 +1,926 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+  <!--This is Free Script which is Designed By ShrinkGlass.com-->
+<title>Happy makar sankranti 2021</title>
+    <meta name="google" value="notranslate">
+    <meta property="og:type" content="Happu makar sankranti 2021" />
+    <meta property="og:title" content="Celebrate This makar sankranti With Your Family and Friends!" />
+    <meta property="og:url" content="https://www.google.com/>
+    <meta property="og:description" content="Happy makar sankranti,Celebrate This Navratri And Keep Share This " />
+    <meta property="og:site_name" content=" Happy  makar sankranti" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href='https://fonts.googleapis.com/css?family=Sofia:&effect=neon' rel='stylesheet'>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://1.bp.blogspot.com/-9hs7PW_b7Fk/X_GY0ye-bRI/AAAAAAAAAO8/rZ-dV8ZplH86WUDGfla5czlFP7ygz2g4QCLcBGAsYHQ/s16/favicon-16x16.png">
+  <!-- Don't Sell This Script this was Designed By Shrinkglass-->
+  
+    <script type="text/javascript">
+// <![CDATA[
+var bits=90; // how many bits
+var speed=85; // how fast - smaller is faster
+var bangs=8; // how many can be launched simultaneously (note that using too many can slow the script down)
+var colours=new Array("#03f", "#f03", "#0e0", "#93f", "#0cf", "#f93", "#f0c"); 
+//                     blue    red     green   purple  cyan    orange  pink
+
+/****************************
+* Diwali Fireworks Effect By     *
+* Minattools
+* https://minattools.blogspot.com Contact us for making more script/ *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+var bangheight=new Array();
+var intensity=new Array();
+var colour=new Array();
+var Xpos=new Array();
+var Ypos=new Array();
+var dX=new Array();
+var dY=new Array();
+var stars=new Array();
+var decay=new Array();
+var swide=800;
+var shigh=600;
+var boddie;
+
+window.onload=function() { if (document.getElementById) {
+  var i;
+  boddie=document.createElement("div");
+  boddie.style.position="fixed";
+  boddie.style.top="0px";
+  boddie.style.left="0px";
+  boddie.style.overflow="visible";
+  boddie.style.width="1px";
+  boddie.style.height="1px";
+  boddie.style.backgroundColor="transparent";
+  document.body.appendChild(boddie);
+  set_width();
+  for (i=0; i<bangs; i++) {
+    write_fire(i);
+    launch(i);
+    setInterval('stepthrough('+i+')', speed);
+  }
+}}
+
+function write_fire(N) {
+  var i, rlef, rdow;
+  stars[N+'r']=createDiv('|', 12);
+  boddie.appendChild(stars[N+'r']);
+  for (i=bits*N; i<bits+bits*N; i++) {
+    stars[i]=createDiv('*', 13);
+    boddie.appendChild(stars[i]);
+  }
+}
+
+function createDiv(char, size) {
+  var div=document.createElement("div");
+  div.style.font=size+"px monospace";
+  div.style.position="absolute";
+  div.style.backgroundColor="transparent";
+  div.appendChild(document.createTextNode(char));
+  return (div);
+}
+
+function launch(N) {
+  colour[N]=Math.floor(Math.random()*colours.length);
+  Xpos[N+"r"]=swide*0.5;
+  Ypos[N+"r"]=shigh-5;
+  bangheight[N]=Math.round((0.5+Math.random())*shigh*0.4);
+  dX[N+"r"]=(Math.random()-0.5)*swide/bangheight[N];
+  if (dX[N+"r"]>1.25) stars[N+"r"].firstChild.nodeValue="/";
+  else if (dX[N+"r"]<-1.25) stars[N+"r"].firstChild.nodeValue="\\";
+  else stars[N+"r"].firstChild.nodeValue="|";
+  stars[N+"r"].style.color=colours[colour[N]];
+}
+
+function bang(N) {
+  var i, Z, A=0;
+  for (i=bits*N; i<bits+bits*N; i++) { 
+    Z=stars[i].style;
+    Z.left=Xpos[i]+"px";
+    Z.top=Ypos[i]+"px";
+    if (decay[i]) decay[i]--;
+    else A++;
+    if (decay[i]==15) Z.fontSize="7px";
+    else if (decay[i]==7) Z.fontSize="2px";
+    else if (decay[i]==1) Z.visibility="hidden";
+    Xpos[i]+=dX[i];
+    Ypos[i]+=(dY[i]+=1.25/intensity[N]);
+  }
+  if (A!=bits) setTimeout("bang("+N+")", speed);
+}
+
+function stepthrough(N) { 
+  var i, M, Z;
+  var oldx=Xpos[N+"r"];
+  var oldy=Ypos[N+"r"];
+  Xpos[N+"r"]+=dX[N+"r"];
+  Ypos[N+"r"]-=4;
+  if (Ypos[N+"r"]<bangheight[N]) {
+    M=Math.floor(Math.random()*3*colours.length);
+    intensity[N]=5+Math.random()*4;
+    for (i=N*bits; i<bits+bits*N; i++) {
+      Xpos[i]=Xpos[N+"r"];
+      Ypos[i]=Ypos[N+"r"];
+      dY[i]=(Math.random()-0.5)*intensity[N];
+      dX[i]=(Math.random()-0.5)*(intensity[N]-Math.abs(dY[i]))*1.25;
+      decay[i]=16+Math.floor(Math.random()*16);
+      Z=stars[i];
+      if (M<colours.length) Z.style.color=colours[i%2?colour[N]:M];
+      else if (M<2*colours.length) Z.style.color=colours[colour[N]];
+      else Z.style.color=colours[i%colours.length];
+      Z.style.fontSize="13px";
+      Z.style.visibility="visible";
+    }
+    bang(N);
+    launch(N);
+  }
+  stars[N+"r"].style.left=oldx+"px";
+  stars[N+"r"].style.top=oldy+"px";
+} 
+
+window.onresize=set_width;
+function set_width() {
+  var sw_min=999999;
+  var sh_min=999999;
+  if (document.documentElement && document.documentElement.clientWidth) {
+    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+  }
+  if (typeof(self.innerWidth)!="undefined" && self.innerWidth) {
+    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+  }
+  if (document.body.clientWidth) {
+    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+  }
+  if (sw_min==999999 || sh_min==999999) {
+    sw_min=800;
+    sh_min=600;
+  }
+  swide=sw_min;
+  shigh=sh_min;
+}
+// ]]>
+</script>
+  
+  
+<style>
+i {
+        color:#FFFF00;
+    }
+input[type=name], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.footerbtn {
+ 
+            display: block;
+            line-height: 15px;
+            position: fixed;
+            left:0px;
+            bottom:0px;
+            height:40px;
+            
+border-radius: 15px;
+  box-sizing: border-box;
+  padding: 5px;
+  background:#34af23;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  width:95%;
+ margin-left:10px;
+            margin-right:30px;
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .3);
+            animation: footer infinite linear 1s;
+            -webkit-transform: translate3d(30%,0,0);
+            transform: translate3d(30%,0,0);
+            position: fixed;
+           
+}
+
+.footerbtn :active {
+            box-shadow: none
+        }
+
+        @-webkit-keyframes footer {
+            from {
+                -webkit-transform: rotateZ(0)
+            }
+            25% {
+                -webkit-transform: rotateZ(0deg)
+            }
+            50% {
+                -webkit-transform: rotateZ(0deg)
+            }
+            75% {
+                -webkit-transform: rotateZ(0deg)
+            }
+            to {
+                -webkit-transform: rotateZ(0)
+            }}
+
+@-webkit-keyframes jello {  from, 11.1%, to {    transform: none;  }
+  22.2% {    transform: skewX(-12.5deg) skewY(-12.5deg);  }
+  33.3% {    transform: skewX(6.25deg) skewY(6.25deg);  }
+  44.4% {    transform: skewX(-3.125deg) skewY(-3.125deg);  }
+  55.5% {    transform: skewX(1.5625deg) skewY(1.5625deg);  }
+  66.6% {    transform: skewX(-0.78125deg) skewY(-0.78125deg);  }
+  77.7% {    transform: skewX(0.390625deg) skewY(0.390625deg);  }
+  88.8% {    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);  }}
+
+    .JayMinat1{position:fixed;left:1%; width:auto;height:100%;top:1%;color:#000;}
+    .JayMinat2{position:fixed;right:1%; width:auto;height:100%;top:1%;color:#000;}
+.bubbles {
+font-family: arial;
+}
+
+.bubbles hi {
+font-family: 'Luckiest Guy', cursive;
+color: black;
+}
+
+hi {
+ font-size:2.5em;
+ user-select:none;
+}
+
+hi span { display:inline-block; animation:float .2s ease-in-out infinite; }
+ @keyframes float {
+  0%,100%{ transform:none; }
+  33%{ transform:translateY(-1px) rotate(-2deg); }
+  66%{ transform:translateY(1px) rotate(2deg); }
+}
+body:hover span { animation:bounce .6s; }
+@keyframes bounce {
+  0%,100%{ transform:translate(0); }
+  25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+}
+
+@import url(https://lh6.googleusercontent.com/proxy/YfzDH9rGEX2_6c0-ipAee-UwIRD6yJ2S-9zgBkCvqKQxaNYcbJ399-QVTehEPWRHJ-iB2IRCLJ-HGPW_wv9fmo8T2WG1qQ=s0-d);
+
+h1 {
+  animation:glow 10s ease-in-out infinite;
+}
+
+
+
+* { box-sizing:border-box; }
+
+figure {
+  animation:wobble 5s ease-in-out infinite;
+  transform-origin:center center;
+  transform-style:preserve-3d;
+}
+
+@keyframes wobble {
+  0%,100%{ transform:rotate3d(1,1,0,40deg); }
+  25%{ transform:rotate3d(-1,1,0,40deg); }
+  50%{ transform:rotate3d(-1,-1,0,40deg); }
+  75%{ transform:rotate3d(1,-1,0,40deg); }
+}
+
+h1 {
+  display:block;
+  width:90%;
+  line-height:1.5;
+  font:900 35px 'Concert One', sans-serif;
+  position:absolute;
+  color:#fff;
+}
+
+@keyframes glow {
+  0%,100%{ text-shadow:0 0 30px red; }
+  25%{ text-shadow:0 0 30px orange; }
+  50%{ text-shadow:0 0 30px forestgreen; }
+  75%{ text-shadow:0 0 30px cyan; }
+}
+
+h1:nth-child(2){ transform:translateZ(5px); }
+h1:nth-child(3){ transform:translateZ(10px);}
+h1:nth-child(4){ transform:translateZ(15px); }
+h1:nth-child(5){ transform:translateZ(20px); }
+h1:nth-child(6){ transform:translateZ(25px); }
+h1:nth-child(7){ transform:translateZ(30p.rock{animation:infinite 1s rock}
+@keyframes rock {  0% {    transform: rotate(-1deg);  }
+  50% {    transform: rotate(2deg);  }
+  100% {    transform: rotate(-1deg);  }}x); }
+h1:nth-child(8){ transform:translateZ(35px); }
+h1:nth-child(9){ transform:translateZ(40px); }
+h1:nth-child(10){ transform:translateZ(45px); }
+
+
+
+.rock{animation:infinite 1s rock}
+@keyframes rock {  0% {    transform: rotate(-1deg);  }
+  50% {    transform: rotate(2deg);  }
+  100% {    transform: rotate(-1deg);  }}
+
+.fuck{animation:infinite 1s fuck}
+@keyframes rock {  0% {    transform: rotate(-2deg);  }
+  50% {    transform: rotate(2deg);  }
+  100% {    transform: rotate(-2deg);  }}
+
+
+h2 {
+   
+    -webkit-animation: bounceIn 4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+     animation: bounceIn 4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    font-size: 35px;
+    text-transform: uppercase;
+    TEXT-ALIGN:CENTER;
+    color: #138808;
+    text-shadow: -2px 0px 1px #22414f, -4px 0px 1px #22414f, -6px 0px 1px #22414f, -1px -1px 1px #22414f, -1px -2px 1px #22414f, -2px -1px 1px #22414f, -2px -2px 1px #22414f, -3px -3px 1px #22414f, -4px -4px 1px #22414f, -5px -5px 1px #22414f, -6px -6px 1px #22414f, 0 0 15px #22414f, 0 0 20px #22414f, 1px 1px #22414f,2px 2px #22414f;
+
+}
+
+h3 {
+    font-size: 18px;
+    text-align: center;
+    padding:1px;
+    margin:1px;
+    color: #ffffff;
+   
+    aanimation: fuck infinite 1s;
+    font-family: 'Indie Flower', cursive;
+    letter-spacing: 2px;
+	
+	
+	* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* freetemplateandwidget4u.store */
+.JayMinat-slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/*https://www.freetemplateandwidget4u.store/ */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/11 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+	
+	
+}
+</style>
+
+
+   <style>
+    body{
+        background: #f8f8f8;
+}
+      .mainContainer {
+max-width: 400px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    padding-right: 1px;
+    padding-left: 1px;
+    padding-top: 1px;
+    box-shadow: 3px 3px 23px 0 rgba(0, 0, 0, 0.64);
+    margin-bottom: 65px;
+}
+
+
+.JayMinatncontainer {
+   
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 2px;
+  
+}
+
+      }
+
+.username {
+    -webkit-animation: bounceIn 4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+     animation: bounceIn 4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    font-size: 40px;
+    font-family: 'SF Espresso Shack', cursive;
+    text-transform: uppercase;
+    TEXT-ALIGN:CENTER;
+    color: #138808;
+    text-shadow: -2px 0px 1px #22414f, -4px 0px 1px #22414f, -6px 0px 1px #22414f, -1px -1px 1px #22414f, -1px -2px 1px #22414f, -2px -1px 1px #22414f, -2px -2px 1px #22414f, -3px -3px 1px #22414f, -4px -4px 1px #22414f, -5px -5px 1px #22414f, -6px -6px 1px #22414f, 0 0 15px #22414f, 0 0 20px #22414f, 1px 1px #22414f,2px 2px #22414f;
+
+}
+      .fromMessage{
+       
+       
+        
+        font-size: 30px;
+        
+      }
+      .wavetext{
+        color: #3e8ed2;
+        padding: 0 40px;
+        animation: pulse 1s infinite;
+        font-size: 32px;
+
+      }
+      .wishMessage {
+        color: #3e8ed2;
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 50px;
+        text-shadow: 0px 0px 10px #00fff3
+      }
+      .wishMessage p{
+        margin: 0.5em 0;
+      }
+      #formBox {
+        left: 0;position: fixed;bottom: 0;display: inline-block;width: 100%;margin: 0;
+      }
+      #nameTextBox {
+        border: 3px solid #000000;text-align: center;display: inline-block;width: 80%;color: black;font-size:16px;margin: 0;background: #eee;height: 48px;font-weight: 700;;padding:8px 0;
+      }
+      #goButton {
+        width: 20%;background: gold;display: inline-block;vertical-align: bottom;border: 3px solid #000000;float: right;color: black;font-size:16px;padding:8px 0;height: 48px;text-align:center;font-weight: 700;
+      }
+      .footerbtn {
+        display: none;
+        line-height: 15px;
+        bottom: 10px;
+        height: 40px;
+        border-radius: 15px;
+        box-sizing: border-box;
+        padding: 5px;
+        background: #34af23;
+        color: #ffffff;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .3);
+        
+        position: fixed;
+        width: 90%;
+        left: 0;
+        margin: 2% 5%;
+      }
+      .footerbtn img {
+        position: relative;top:3px;
+      }
+      #inAdvance {
+        font-size: 20px; font-weight: bold;margin-top: 20px;color: #98201F;
+      }
+      #demoo {
+        font-size: 20px; font-weight: bold;color: #98201F;
+        
+      }
+      #inAdvanceTime {
+        margin:20px 0 30px 0;
+      }
+      #inAdvanceTime p{
+        color: #ae00b9;font-size: 19px;font-weight: 500;
+        margin: 0;
+      }
+.bg{background-image:url("");background-repeat:repeat}p.head.name{word-wrap: break-word;font-size:40px;font-family:sans-serif;text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);color:#f5f5f5}input#mce-names {width: 100% !important;margin-top: 20px !important;}
+
+
+
+
+.JayMinat-main-greeting {
+   
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    padding: 0px;
+    background:#000;
+    background: url("https://1.bp.blogspot.com/-UWYRVjmNhXQ/X3qOnHhyngI/AAAAAAAAAF4/P4AWhvVHklgNLRhYm4eMCZAyrGiBob_twCLcBGAsYHQ/s499/diwali%2Bfireworks%2Beffect%2Bby%2BJayMinat.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 3px 4px 41px 0 rgba(0, 0, 0, 0.64);
+    margin-bottom: 35px
+}
+
+.JayMinat-main-greeting .main_body {
+    text-align: center;
+    font-size: 1.3em
+}
+.JayMinat-main-greeting .main_body .text2 {
+    padding: 10px;
+    font-size: 20px
+}
+.JayMinat-main-greeting .text {
+    color: #405d9b;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 0px 10px;
+    text-align: center;
+}
+.JayMinat-main-greeting .pp-img {
+    max-width: 400px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.64);
+}
+
+.JayMinat-main-greeting .text_gradient {
+    margin: 5px auto;
+    font-weight: 700;
+    font-size: 24px;
+    color: #b50dae;
+}
+
+
+
+    </style>
+
+
+	  <style>img[alt="minatools. blogspot.com"]{display:none;}</style>
+
+
+</head>
+ <body class="bg" style=" background-image : url('https://3.bp.blogspot.com/-TvoWWnCdd5w/XWObzrgAnAI/AAAAAAAAADo/PwGSqiL_QKwR9PAVb_-GTs8C56emlubJACLcBGAs/s1600/star0%2B%25281%2529.gif')";>
+
+
+</center> 
+
+
+  <div class="JayMinatncontainer">
+
+    <div class="JayMinat-main-greeting">
+
+<div style="background: url(https://2.bp.blogspot.com/-T_tXR3JA5mk/W5-lhCTz4jI/AAAAAAAACRc/nqUIwYh7dNc-llDLOKfY0837pxPaoqs7QCLcBGAs/s1600/Navratri%2Bfree%2Bfestival%2Bwishing%2Bwebsite%2Bscript%2Bfor%2Bblogger%2B2018%2Bpro%2Bscript%2Bdownload%2Band%2Bearn%2Bmoney%2Bstrip.png); background-color: white; color: white; font-weight: bold; padding-top: 0px; padding-bottom: 0px; font-size: 12;text-align:center; ">
+<font color="white"> <p id="JayMinat"></p>
+</font></div>
+
+<div style="background: url(https://1.bp.blogspot.com/-Q_9GY4r8Orw/X3qMU921J1I/AAAAAAAAAFs/I9CarhCO1ucdNLzHOj3fY0mK0M2Rj7jVwCLcBGAsYHQ/s220/Diwali%2BSparkling%2BEffect%2Bfor%2BWelcome%2B.gif); background-color: black; color: white; font-weight: bold; padding-top: 6px; padding-bottom: 6px; font-size: large;text-align:center; ">
+
+<h2 class="font-effect-neon" align=center" id="JayMinat-show-name"></h2>
+</div>
+<div style="background: url(https://2.bp.blogspot.com/-T_tXR3JA5mk/W5-lhCTz4jI/AAAAAAAACRc/nqUIwYh7dNc-llDLOKfY0837pxPaoqs7QCLcBGAs/s1600/Navratri%2Bfree%2Bfestival%2Bwishing%2Bwebsite%2Bscript%2Bfor%2Bblogger%2B2018%2Bpro%2Bscript%2Bdownload%2Band%2Bearn%2Bmoney%2Bstrip.png); background-color: black; color: white; font-weight: bold; padding-top: 6px; padding-bottom: 6px; font-size: large;text-align:center; ">
+</font></div>
+        <div class="font-effect-neon"><p class="fromMessage" id="Jayminat-fromMessage"></p></div>
+        
+
+
+</center>
+
+<center>
+<iframe data-aa="1541708" src="//ad.a-ads.com/1541708?size=300x250" scrolling="no" style="width:300px; height:250px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
+
+</center>
+
+<div class="vi" style="text-align: center;">
+
+<br>
+<center><img src="https://1.bp.blogspot.com/-Bt4ORkuxSvE/Wk9usXUi0jI/AAAAAAAAAqc/vx8hdFaHKP8DdF2CVnDvnFYEqr6yOwWCQCLcBGAs/s1600/happy-makar-sankranti-gif-image.gif" class="img-responsive" alt="Jayminat Wishing Script for Blogger" width="95%"></center>
+</br>
+<audio controls autoplay="yes" mobile="yes" src="https://drive.google.com/uc?export=download&id=1b6OsNvIz1czdmadN15-7ItdAmCqLHwSY" loop></audio><br/>
+
+<center><img src="https://sxyydm.com/wp-content/uploads/2020/10/eJxhA9uXBu.jpg" class="img-responsive" alt="Made by shrinkGlass.com, script for blogger" width="95%"></center>
+</br>
+<center>
+
+<!--Ads Code Here-->
+
+</center>
+</br>
+<center>
+<a href="https://minattools.blogspot.com/" rel='dofollow'><font color="black">c</font></a>
+<h3><span><font color="white">इश्क की पतंगे उडाना छोड़ दी …..</font></span><br>
+<span><font color="white">वरना हर हसीनाओं की छत पर हमारे ही धागे होते.</font></span><br>
+  <a href="https://minattech.blogspot.com" rel='dofollow'><font color="black">c</font></a>
+<span><font color="white">आदमी का भी पतंग की तरह ही है साहब</font></span><br>
+    <span><font color="white">कन्या अच्छी बंधी तो उची उड़ान </font></span><br>
+   <span><font color="white"> और गलत बंधी तो</font></span><br>
+  <span><font color="white"> गोल गोल घुमता रहता हैो</font></span><br>
+<span><font color="white"> Happy makar sankranti 2021 </font></span>
+</h3>
+                 
+                   
+<!--Ads Code will Be Here-->
+                   
+</center>
+</br>
+<center><img src="https://1.bp.blogspot.com/-xCiuBVhoWEM/XDWzn_JJcxI/AAAAAAAABoQ/v8y6vc6YTXQgj-tSKz7mdkByRVziLQNOQCLcBGAs/s1600/makar-sankranti-kite-gif.gif" class="img-responsive" alt="Shrinkglass.com" width="95%"></center>
+</br>
+<center>
+<h3><span><font color="white">होठों पे मुस्कान औँर आपका साथ हो,</font></span>
+<span><font color="white">हर त्योहार हमारे लिए फिर खास हो</font></span><br>
+<span><font color="white">उड़े पतंग हवा में और आप खिलखिलाती हो,</font></span><br>
+<font color="white">ऐसी इस साल की हमारी मकर संक्रांति हो </font></span><br>
+  <font color="lightblue">! Keep Share This Wish With Others and try to make it  !</font></span>
+</h3>                  
+</center>
+</br>
+<center>
+                         
+<!--Ads Code Here-->
+                    
+  </center>
+</br>
+  
+
+<div class="JayMinat-slideshow-container">
+<div class="JayMinatSlides fade">
+                                     
+  
+</div>
+<div class="JayMinatSlides fade">
+
+</div>
+
+<div class="JayMinatSlides fade">
+  
+  
+</div>
+  <div class="JayMinatSlides fade">
+
+  
+</div>
+
+
+</div>
+
+<div class="JayMinatSlides fade">
+                                     
+ 
+</div>
+
+</div>
+<br>
+<center>  
+
+
+
+<!--Ads Code of Bottom Area Will Be Here-->
+
+
+</center>
+<br>
+<center><img src="https://3.bp.blogspot.com/--VrLDvTMfE0/W2xAmnbAbSI/AAAAAAAABo0/g6rPQo521MASQKKAnw2LLed-OR1OlgF9gCLcBGAs/s1600/c.gif" class="img-responsive" alt="JayMinat" width="30%"></center>
+<br><br>
+
+<div style="text-align:center">
+  <span class="JayMinatdot"></span> 
+  <span class="JayMinatdot"></span> 
+  <span class="JayMinatdot"></span> 
+  <span class="JayMinatdot"></span>
+  <span class="JayMinatdot"></span>
+  <span class="JayMinatdot"></span>
+  <span class="JayMinatdot"></span>
+  <span class="JayMinatdot"></span>
+  <span class="JayMinatdot"></span>
+</div>
+
+
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("JayMinatSlides");
+    var dots = document.getElementsByClassName("JayMinatdot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+<div id="formBox" >
+          <input type="text" name="name" id="nameTextBox"  placeholder="Enter Your Name">
+          <div id="goButton" onclick="createGreeting()" >
+          Click to Wish
+          </div>
+        </div>
+        <a class="footerbtn" href="javascript:void(0)" onclick="shareActionWA()">
+          <img width="25px" height="25px" src="https://1.bp.blogspot.com/-tnL_VflQoqQ/X3fcmMqxXtI/AAAAAAAAADY/hrOHTHRu0iYVR5xNiaU0wfbYdwETEUqrwCLcBGAsYHQ/s35/JayMinat%2BWhatsapp.png">
+          <b style="font-size: 15px;position:  relative;top: -3px;margin: 0 10px;">Share with your Friends and Family</b>
+          <img width="25px" height="25px" src="https://1.bp.blogspot.com/-tnL_VflQoqQ/X3fcmMqxXtI/AAAAAAAAADY/hrOHTHRu0iYVR5xNiaU0wfbYdwETEUqrwCLcBGAsYHQ/s35/JayMinat%2BWhatsapp.png">
+        </a>
+    </div>
+        
+  </body>
+
+  <script>
+      var jqs = function(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split("&");
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split("=");
+            if (sParameterName[0] === sParam) {
+              return sParameterName[1];
+            }
+          }
+      };
+    window.jqs = jqs;
+    var name = decodeURI(jqs("bl"));
+    if (typeof jqs("bl") === "undefined") {
+      name = "";
+    }
+    var checkName = function() {
+      if (name.length !== 0) {
+        name = name.replace(/-/g, " ");
+        console.log("name is there", name);
+        document.querySelector("#JayMinat-show-name").innerHTML = name;
+        document.querySelector("#JayMinat-fromMessage").innerHTML= "Wishing You"
+      } else {
+
+      }
+    };
+
+    checkName();
+
+    var createGreeting=function(){
+
+      // ga('send', {
+      //   hitType: 'event',
+      //   eventCategory: 'interaction',
+      //   eventAction: 'click',
+      //   eventLabel: 'goButtonClicked'
+      // });
+
+      gtag('event', 'click', {
+            'event_category': 'interaction',
+            'event_label': 'goButtonClicked',
+      });
+
+      sname=document.querySelector("#nameTextBox").value;
+      sname=sname.replace(/@/g,"-")
+      sname=sname.replace(/%40/g,"-")
+      sname=sname.replace(/\./g,"-")
+      if(sname.trim()!=""){
+        document.querySelector("#formBox").style.display = "none";
+        document.querySelector(".footerbtn").style.display = "block";
+        document.querySelector("#JayMinat-show-name").innerHTML = sname;
+        document.querySelector("#JayMinat-fromMessage").innerHTML= "Click on the WhatsApp Icon to share with your friends and Family";
+        window.scrollTo(0,0);
+      }else {
+        alert ("Please Type Your Name First");
+        document.getElementById("nameTextBox").focus();
+      }
+    }
+
+    var shareActionWA = function() {
+      gtag('event', 'click', {
+            'event_category': 'interaction',
+            'event_label': 'shareOnWhatsAppClicked',
+      });
+
+      var shareString = "";
+      var whatsappHref;
+      shareString += "*"+sname+"*";
+
+      
+      shareString +=" Send You Makar sankranti Wishes For You | Click On Blue Line%0AðŸ‘‰"
+      shareString +=(window.location.href.split("?")[0] + "?bl=" + sname).replace("#", "").replace(/ /g, "-");
+     
+
+      whatsappHref = "whatsapp://send?text=" + shareString;
+      window.location.href = whatsappHref;
+
+    };
+    var countDownDate = new Date("Jan 14, 2021 00:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demoo").innerHTML = days + "days " + hours + "hr "+ minutes + "min " + seconds + "sec ";
+
+        // If the count down is over, write some text
+        if (distance < 0)
+         {
+            clearInterval(x);
+            document.getElementById("demoo").innerHTML = "";
+            document.getElementById("inAdvance").innerHTML = "";
+
+        }
+    }, 1000);
+  </script>
+<!-- Display the countdown timer in an element -->
+
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Nov 15, 2020 00:00:00").getTime();
+
+// Update the count down every 01 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="JayMinat"
+  document.getElementById("JayMinat").innerHTML = days + "<i> Days,</i> " + hours + " <i>Hrs,</i> "
+  + minutes + "<i> Min,</i> " + seconds + "<i> Sec</i> ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("JayMinat").innerHTML = ".";
+  }
+}, 1000);
+</script>        
+<script src="https://www.googletagmanager.com/gtag/js?id=UA--1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA--1');
+  // ga('create', 'UA--1');
+  // ga('require', 'linker');
+  // ga('send', 'pageview');
+</script>
+</html>

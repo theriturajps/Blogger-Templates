@@ -1,0 +1,4350 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<title><data:blog.pageTitle/></title>
+<b:include data='blog' name='all-head-content'/>
+<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'/>
+<link href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet'/>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:300' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Economica:700' rel='stylesheet' type='text/css'/>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js' type='text/javascript'/>
+<script src='http://yourjavascript.com/3439241227/blog.js' type='text/javascript'/>
+<!-- Begin Open Graph metadata --> 
+<meta expr:content='&quot;en_US&quot;' property='og:locale'/> <meta expr:content='data:blog.canonicalUrl' property='og:url'/> 
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<meta expr:content='data:blog.pageName' property='og:title'/>
+<meta content='article' property='og:type'/>
+</b:if> 
+<meta expr:content='data:blog.title' property='og:site_name'/> 
+<b:if cond='data:blog.postImageThumbnailUrl'>
+<meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+<b:else/>
+<meta content='WRITE IMAGE OF LOGO URL HERE' property='og:image'/>
+</b:if> 
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<b:else/>
+<meta content='WRITE THE BLOG DESCRIPTION HERE' property='og:description'/>
+<!-- Still looking for a way to use the post snippet if there's no description -->
+</b:if>
+<!-- End Open Graph metadata -->
+<b:skin><![CDATA[/*
+-----------------------------------------------
+Blogger Template Style
+Name:        Dream Grid
+Author: alistarbot
+----------------------------------------------- */
+body#layout .slider,body#layout .header_right,.status-msg-wrap,body#layout .socials,#navbar,.date-header,.feed-links,.post-location,.post-icons{display: none !important;}
+
+.section, .widget, .widget-content, .widget ul, .widget li, body, h1, h2, h3, h4, h5, ul, li, a, p, span, img, dd {
+    border: medium none;
+    list-style: none outside none;
+    margin: 0;
+    outline: medium none;
+    padding: 0;
+    text-decoration: none;
+}
+body {
+    background: url(http://1.bp.blogspot.com/-mT9szSks38Y/VCudDJ4iPGI/AAAAAAAABB8/nK3EBVqRV6E/s1600/body-background.jpg) no-repeat fixed center top #414141!important;
+    color: #666666;
+    font: 400 13px/1.6 Arial,"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+    word-wrap: break-word;
+}
+a {
+    color: #E74C3C;
+}
+a:hover {
+    color: #888888;
+}
+h1, h2, h3, h4, h5 {
+    font-family: "Oswald",Georgia,"Times New Roman",Times,serif;
+    font-weight: normal;
+    line-height: inherit;
+}
+.top_wrapper {
+    margin-bottom: 30px;
+}
+#header-wrapper {
+    background: url("https://lh3.googleusercontent.com/-dWD6fLTXGKI/UcPyBdjWZuI/AAAAAAAAB7o/3yHEMBx00iM/s67/pattern-header.png") repeat-x scroll 0 0 #34495E;
+    border-top: 5px solid #E74C3C;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    padding-top: 30px;
+    position: relative;
+    z-index: 100;
+}
+.header_left {
+    float: left;
+    width: 400px;
+}
+#header {
+    float: left;
+    margin-right: 20px;
+}
+#header, #header a {
+    color: #FFFFFF;
+}
+#header h1 {
+    font-size: 30px;
+}
+#header img {
+    max-height: 50px;
+    width: auto;
+}
+.socials {
+    float: left;
+    padding-top: 12px;
+}
+.socials a {
+    background: url("https://lh5.googleusercontent.com/-bnH0e3pPbvA/UcPyDkpraFI/AAAAAAAAB9A/szLwrBKt11U/s360/social_icons.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 28px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    overflow: hidden;
+    text-indent: -9999em;
+    width: 30px;
+}
+.socials a:hover {
+    opacity: 0.9;
+}
+.socials a.facebook {
+    background-position: -30px 0;
+}
+.socials a.vimeo {
+    background-position: -150px 0;
+}
+.socials a.rss {
+    background-position: -60px 0;
+}
+.socials a.google_plus {
+    background-position: -270px 0;
+}
+.socials a.pinterest {
+    background-position: -300px 0;
+}
+#top_menu {
+    margin-top: -18px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+}
+.sf-menu.hide {
+    display: none;
+}
+.select_menu {
+    cursor: pointer;
+    display: none;
+    font-size: 12px;
+    height: 3em;
+    line-height: 3em;
+    margin: 0;
+    padding-left: 10px;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+#top_menu span.nav_select {
+    -moz-box-sizing: border-box;
+    background: url("https://lh3.googleusercontent.com/-kuwjHwxHU5M/UcPx9Rf6hYI/AAAAAAAAB5s/kBvMLWkeLz4/s32/button_gray.png") repeat-x scroll center bottom #EDEDED;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    display: none;
+    font-size: 12px;
+    height: 3em;
+    left: 0;
+    line-height: 3em;
+    padding: 0 1em;
+    position: absolute;
+    text-shadow: 0 1px 1px #FFFFFF;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+#top_menu span.nav_select span.menu_icon_wrapper {
+    background: url("https://lh6.googleusercontent.com/-VHd-MUXwJmQ/UcPx8zFDwjI/AAAAAAAAB5Y/qY_VtSSDbT8/s32/button.png") repeat-x scroll center bottom #E74C3C;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    font-size: 12px;
+    height: 3em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3em;
+}
+#top_menu span.nav_select span.menu_icon_wrapper span.menu_icon {
+    background: url("https://lh6.googleusercontent.com/-pQJha9_ywEA/UcPyAHqGh9I/AAAAAAAAB7A/O0_qVLEac8g/s15/menu_icon.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.header_search {
+    -moz-user-select: none;
+    float: right;
+    margin-left: 5px;
+    padding-top: 5px;
+}
+.header_search .search_zoom {
+    background: url("https://lh4.googleusercontent.com/-CR2tILljH80/UcPyClKWCgI/AAAAAAAAB8g/75u74UxJL4g/s210/search_btn.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    float: right;
+    height: 28px;
+    width: 30px;
+}
+.header_search .search_zoom.close {
+    background-position: 0 100%;
+}
+.header_search .search_box {
+    display: none;
+    height: 36px;
+    margin-top: -17px;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    width: 200px;
+}
+.header_search .search_box.show {
+    display: block;
+}
+.header_search .search_box input.search_input {
+    height: 36px;
+    line-height: 32px;
+    padding: 0 10px;
+    width: 100%;
+}
+.sf-menu, .sf-menu * {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.sf-menu {
+    line-height: 1;
+}
+.sf-menu ul {
+    position: absolute;
+    top: -999em;
+    width: 15em;
+}
+.sf-menu ul li {
+    width: 100%;
+}
+.sf-menu li:hover {
+    visibility: inherit;
+}
+.sf-menu li {
+    float: left;
+    margin-right: 5px;
+    position: relative;
+}
+.sf-menu a {
+    display: block;
+    position: relative;
+}
+.sf-menu li:hover ul, .sf-menu li.sfHover ul {
+    left: 0;
+    top: 3.1em;
+    z-index: 99;
+}
+ul.sf-menu li:hover li ul, ul.sf-menu li.sfHover li ul {
+    top: -999em;
+}
+ul.sf-menu li li:hover ul, ul.sf-menu li li.sfHover ul {
+    left: 15em;
+    padding-top: 0;
+    top: 0;
+}
+ul.sf-menu li li:hover li ul, ul.sf-menu li li.sfHover li ul {
+    top: -999em;
+}
+ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul {
+    left: 10em;
+    top: 0;
+}
+.sf-menu {
+    float: left;
+}
+.sf-menu a {
+    padding: 0.9em 1em;
+    text-decoration: none;
+}
+.sf-menu a, .sf-menu a:visited {
+    border-radius: 2px;
+    color: #E8F0F3;
+    font-weight: bold;
+    line-height: 1em;
+    outline: medium none;
+    padding: 1em;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.sf-menu li {
+    border-radius: 2px;
+}
+.sf-menu li li {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #EAEAEA;
+    border-radius: 0;
+}
+.sf-menu li:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.sf-menu li:last-child {
+    border: medium none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.sf-menu li li a, .sf-menu li li a:visited {
+    color: #666666;
+    text-shadow: none;
+}
+.sf-menu > li.current-menu-ancestor > a, .sf-menu > li.current-menu-parent > a, .sf-menu > li.current-post-ancestor > a, .sf-menu > li.current-post-parent > a, .sf-menu > li.current-menu-item > a, .sf-menu > li.current_page_item > a, .sf-menu > li.current > a {
+    background: url("https://lh3.googleusercontent.com/-K8Ezzv3u9b0/UcPyCzgITRI/AAAAAAAAB8o/QrYxUjJaP3Q/s34/skin1_gd.png") repeat-x scroll center bottom #E74C3C;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+}
+.sf-menu li:hover, .sf-menu li.sfHover {
+    background: url("https://lh6.googleusercontent.com/-VHd-MUXwJmQ/UcPx8zFDwjI/AAAAAAAAB5Y/qY_VtSSDbT8/s32/button.png") repeat-x scroll center bottom #536D86;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    outline: 0 none;
+}
+.sf-menu > li:hover > a, .sf-menu > li.sfHover > a {
+    color: #FFFFFF;
+}
+.sf-menu li li.current-menu-ancestor > a, .sf-menu li li.current-menu-parent > a, .sf-menu li li.current-post-ancestor > a, .sf-menu li li.current-post-parent > a, .sf-menu li li.current-menu-item a, .sf-menu li li.current_page_item a, .sf-menu li li.current a {
+    background: none repeat scroll 0 0 #F0F0F0;
+    box-shadow: none;
+    color: #F4836A;
+}
+.sf-menu li li:hover, .sf-menu li li.sfHover {
+    background: url("https://lh3.googleusercontent.com/-1QB3XFmdlYY/UcPyBWfyb4I/AAAAAAAAB74/ITrfhAVjwNI/s67/pattern.png") repeat-x scroll 0 0 #F9F9F9;
+}
+.sf-menu li li:hover a, .sf-menu li li.sfHover a {
+    color: #333333;
+}
+.sf-menu a.sf-with-ul {
+    min-width: 1px;
+    padding-right: 1.7em;
+}
+.sf-sub-indicator {
+    background: url("https://lh5.googleusercontent.com/-_c7cDyImAGY/UcPx8wd-mlI/AAAAAAAAB5c/EjJte4q0gF4/s110/arrows-ffffff.png") no-repeat scroll -10px -100px rgba(0, 0, 0, 0);
+    display: block;
+    height: 10px;
+    overflow: hidden;
+    position: absolute;
+    right: 0.6em;
+    text-indent: -999em;
+    top: 1.05em;
+    width: 10px;
+}
+a > .sf-sub-indicator {
+    background-position: 0 -100px;
+    top: 1.1em;
+}
+a:focus > .sf-sub-indicator, a:hover > .sf-sub-indicator, a:active > .sf-sub-indicator, li:hover > a > .sf-sub-indicator, li.sfHover > a > .sf-sub-indicator {
+    background-position: -10px -100px;
+}
+.sf-menu ul .sf-sub-indicator {
+    background-position: -10px 0;
+}
+.sf-menu ul a > .sf-sub-indicator {
+    background-position: 0 0;
+}
+.sf-menu ul a:focus > .sf-sub-indicator, .sf-menu ul a:hover > .sf-sub-indicator, .sf-menu ul a:active > .sf-sub-indicator, .sf-menu ul li:hover > a > .sf-sub-indicator, .sf-menu ul li.sfHover > a > .sf-sub-indicator {
+    background-position: -10px 0;
+}
+.sf-shadow ul {
+    background: url("https://lh6.googleusercontent.com/-Lgz04nY7ppo/UcPx_Vf5SpI/AAAAAAAAB6w/frKzD2hMyEg/s19/menu_arrow.png") no-repeat scroll 20px 0 rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    padding-top: 8px;
+}
+.sf-shadow ul.sf-shadow-off {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.sf-shadow ul ul {
+    background: url("https://lh3.googleusercontent.com/-fxXY1gczTns/UcPx_lhxt8I/AAAAAAAAB60/KbQkNrcw-jE/s19/menu_arrow_sub.png") no-repeat scroll 0 10px rgba(0, 0, 0, 0);
+    padding: 0 0 0 8px;
+}
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: medium none;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+    color: #888888;
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 1em;
+    margin: 0;
+    max-width: 100%;
+    outline: medium none;
+    padding: 1em;
+    width: 300px;
+}
+select {
+    line-height: 1em;
+    padding: 1em;
+    width: 200px;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus {
+    background-color: #FFF5CD;
+    color: #333333;
+}
+textarea {
+    min-height: 60px;
+}
+label, legend {
+    display: block;
+    font-weight: bold;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="checkbox"] {
+    display: inline;
+}
+@media not all {
+input[type="text"], input[type="password"], input[type="email"] {
+    padding: 0.9em;
+}
+}
+.flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus {
+    outline: medium none;
+}
+.slides, .flex-control-nav, .flex-direction-nav {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.flexslider {
+    margin: 0;
+    padding: 0;
+}
+.flexslider .slides > li {
+    display: none;
+}
+.flexslider .slides img {
+    display: block;
+    width: 100%;
+}
+.flex-pauseplay span {
+    text-transform: capitalize;
+}
+.slides:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+html[xmlns] .slides {
+    display: block;
+}
+* html .slides {
+    height: 1%;
+}
+.no-js .slides > li:first-child {
+    display: block;
+}
+.flexslider {
+    margin: 0 0 54px;
+    position: relative;
+}
+.flex-viewport {
+    max-height: 2000px;
+    transition: all 1s ease 0s;
+}
+.loading .flex-viewport {
+    max-height: 300px;
+}
+.flexslider .slides {
+}
+.carousel li {
+    margin-right: 5px;
+}
+.flex-direction-nav {
+    height: 0;
+    margin-top: -35px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+.flex-direction-nav a {
+    background-color: rgba(0, 0, 0, 0.7);
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    height: 70px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    width: 50px;
+}
+.flex-direction-nav .flex-next {
+    background-image: url("https://lh3.googleusercontent.com/-ufDOqvjXVZQ/UcPyAki9zkI/AAAAAAAAB7Y/vuzaVpukn2Q/s22/nav-next.png");
+    right: -50px;
+}
+.flex-direction-nav .flex-prev {
+    background-image: url("https://lh6.googleusercontent.com/-VYx-nqPdYqU/UcPyBbYd6mI/AAAAAAAAB7s/wap9a6qHvgI/s22/nav-prev.png");
+    left: -50px;
+}
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {
+    opacity: 0.8;
+}
+.flex-direction-nav .disabled {
+    cursor: default;
+    opacity: 0.3 !important;
+}
+.flexslider:hover .flex-direction-nav a.flex-next {
+    right: 20px;
+}
+.flexslider:hover .flex-direction-nav a.flex-prev {
+    left: 20px;
+}
+.flex-control-nav {
+    background: url("https://lh3.googleusercontent.com/-1QB3XFmdlYY/UcPyBWfyb4I/AAAAAAAAB74/ITrfhAVjwNI/s67/pattern.png") repeat-x scroll 0 -20px #FFFFFF;
+    bottom: -52px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    height: 35px;
+    left: 0;
+    padding-top: 17px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+}
+.flex-control-nav li {
+    display: inline-block;
+    margin: 0 7px;
+    padding: 0;
+}
+.flex-control-paging li a {
+    background: url("https://lh4.googleusercontent.com/-P0vkb54Qg3w/UcPyDFWoQKI/AAAAAAAAB8s/XWLJwnXIAbA/s26/slider_dots.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #666666;
+    cursor: pointer;
+    display: block;
+    height: 13px;
+    line-height: 28px;
+    overflow: hidden;
+    text-align: center;
+    text-indent: 9999em;
+    width: 13px;
+}
+.flex-control-paging li a.flex-active {
+    background-position: left bottom;
+    cursor: default;
+}
+.flex-control-thumbs {
+    margin: 5px 0 0;
+    overflow: hidden;
+    position: static;
+}
+.flex-control-thumbs li {
+    float: left;
+    margin: 0;
+    width: 25%;
+}
+.flex-control-thumbs img {
+    cursor: pointer;
+    display: block;
+    opacity: 0.7;
+    width: 100%;
+}
+.flex-control-thumbs img:hover {
+    opacity: 1;
+}
+.flex-control-thumbs .active {
+    cursor: default;
+    opacity: 1;
+}
+@media screen and (max-width: 860px) {
+.flex-direction-nav .flex-prev {
+    left: 0;
+    opacity: 1;
+}
+.flex-direction-nav .flex-next {
+    opacity: 1;
+    right: 0;
+}
+}
+.fullwidth.flexslider li {
+    background-size: auto 100% !important;
+}
+.slider .caption_wrapper {
+    bottom: 0;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.slider .caption_wrapper .caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    color: #FFFFFF;
+    display: inline-block;
+    max-width: 350px;
+    padding: 20px 30px;
+}
+.slider .caption_wrapper .caption h3 a {
+    color: #E74C3C;
+    font-size: 22px;
+}
+.slider .caption_wrapper .caption h3 a:hover {
+    color: #FFFFFF;
+}
+.slider img {
+    border-radius: 4px;
+    display: block;
+}
+#sidebar-wrapper {
+    float: right;
+    width: 27.6%;
+}
+.post_item, #comments {
+    background-color: #FFFFFF;
+    -moz-box-shadow:    -1px 1px 6px 0px #000;
+  -webkit-box-shadow: -1px 1px 6px 0px #000;
+    box-shadow: -1px 1px 6px 0px #000;
+}
+.post_item h3 {
+    font-size: 23px;
+font-family: 'Economica', sans-serif;
+}
+.post_item h1 {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+.post_item_title a {
+    background: none repeat scroll 0 0 #424242;
+border-top: 1px solid #000;
+border-bottom: 1px solid #000;
+    color: #24D4CD;
+    display: block;
+    padding: 8px 20px;
+}
+.post_item_title a:hover {
+    
+}
+.large_thumb {
+    position: relative;
+}
+.post-body img {
+    max-width: 500px;
+}
+.thumb {
+    
+    display: block;
+    height: auto !important;
+    width: 100% !important;
+}
+.post_meta {
+    background: url("http://3.bp.blogspot.com/-JXfK65UVMtE/U7XCR5RPenI/AAAAAAAAAZc/mnYN-G17U6g/s1600/patterddddn.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #E0E1DC;
+    padding: 15px 20px;
+}
+.post_meta span {
+    color: #999999;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1;
+    margin-right: 12px;
+    padding: 5px 0;
+    white-space: nowrap;
+}
+.post_meta span.user {
+float:right;
+    background: url("https://lh5.googleusercontent.com/-Qluew9h2rng/UcPyAuOTbeI/AAAAAAAAB7c/l4QJSdazCOA/s16/meta_user.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+    padding-left: 18px;
+}
+.post_meta span.time {
+    background: url("https://lh6.googleusercontent.com/--Swg3CGdbU8/UcPyAEV2cUI/AAAAAAAAB7M/0eEnNgsMq2c/s16/meta_time.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+    padding-left: 20px;
+}
+.post_meta span.comment {
+    background: url("https://lh5.googleusercontent.com/-kfxAAytuHik/UcPyAHbhsxI/AAAAAAAAB7E/h9hMrLZPz3g/s16/meta_comment.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+    padding-left: 20px;
+}
+.post_item_inner {
+    padding: 20px;
+    position: relative;
+}
+.post_item_inner p {
+    margin-bottom: 30px;
+font-family: 'Dosis', sans-serif;
+font-size: 15px;
+}
+.button.normal {
+   border: #000 1px solid;
+height: 8px;
+line-height: 7px;
+}
+.button, .post_tag a, .letter_submit {
+    
+    border-radius: 2px;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 1em;
+    outline: medium none;
+    padding: 1em;
+    text-decoration: none;
+    
+}
+.button:hover {
+    opacity: 0.8;
+background: #000;
+color: #fff;
+transition: background-color 1.5s ease;
+ -webkit-transition: background-color 1.5s ease;
+    -moz-transition: background-color 1.5s ease;
+    -o-transition: background-color 1.5s ease;
+}
+.like_post {
+    
+    border-radius: 2px;
+    float: right;
+}
+.post blockquote {
+    background: url("https://lh3.googleusercontent.com/-oaTPjCsZXq8/UcPyCOOfHpI/AAAAAAAAB8E/H_lmDI9_W8A/s19/quote.png") no-repeat scroll 25px 20px #34495E;
+    color: #FFFFFF;
+    padding: 10px;
+    position: relative;
+}
+.post-footer {
+    border-top: 1px solid #EEEEEE;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+.post_tag a {
+    border: #000 1px solid;
+    color: #666666 !important;
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 0.7em 0.9em;
+    text-shadow: 0 1px 1px #FFFFFF;
+}
+.post_tag a:hover {
+    background-color: #444444;
+    color: #FFFFFF !important;
+    opacity: 1;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.sidebar .widget {
+    background-color: #FFFFFF;
+    
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.sidebar h2 {
+    background: none repeat scroll 0 0 #424242;
+    color: #24D4CD;
+    font-size: 22px;
+    margin: 0;
+    padding: 10px 20px;
+    box-shadow: -2px 2px 0px 0px #000 inset;
+-moz-box-shadow: -2px 2px 0px 0px #000 inset;
+-webkit-box-shadow:-2px 2px 0px 0px #000 inset;
+}
+.sidebar ul li {
+    background: url("https://lh6.googleusercontent.com/-f2lypDf_T0U/UcPx-Q4Bo1I/AAAAAAAAB6U/oiviAxpGje0/s16/folder.png") no-repeat scroll 20px center rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #EEEEEE;
+    padding: 15px 20px 15px 45px;
+}
+.sidebar ul li:hover {
+    background-color: #F9F9F9;
+}
+.sidebar ul li:last-child, #PopularPosts1 dd:last-child {
+    border: medium none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.sidebar li a {
+    color: #666666;
+}
+#comments {
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding: 20px;
+}
+#comments h4 {
+    display: inline;
+    line-height: 40px;
+    padding: 10px;
+}
+#comments h4, .comments .comment-header, .comments .comment-thread.inline-thread .comment {
+    position: relative;
+}
+#comments h4, .comments .continue a {
+    background: none repeat scroll 0 0 #3CE7A3
+}
+#comments h4, .comments .user a, .comments .continue a {
+    font-size: 16px;
+}
+#comments h4, .comments .continue a {
+    color: #FFFFFF;
+    font-weight: normal;
+}
+#comments h4:after {
+    border-right: 20px solid rgba(0, 0, 0, 0);
+    border-top: 10px solid #3CE7A3;
+    bottom: -10px;
+    content: "";
+    height: 0;
+    left: 10px;
+    line-height: 0;
+    position: absolute;
+    width: 0;
+}
+#comments .avatar-image-container img {
+    border: 0 none;
+}
+.comment-thread {
+    color: #111111;
+}
+.comment-thread a {
+    color: #777777;
+}
+.comment-thread ol {
+    margin: 0 0 20px;
+}
+.comment-thread .comment-content a, .comments .user a, .comments .comment-thread.inline-thread .user a {
+    color: #E74C3C;
+}
+.comments .avatar-image-container, .comments .avatar-image-container img {
+    height: 48px;
+    max-height: 48px;
+    max-width: 48px;
+    width: 48px;
+}
+.comments .comment-block, .comments .comments-content .comment-replies, .comments .comment-replybox-single {
+    margin-left: 60px;
+}
+.comments .comment-block, .comments .comment-thread.inline-thread .comment {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+}
+.comments .comments-content .comment {
+    line-height: 1em;
+    margin: 15px 0 0;
+    padding: 0;
+    width: 100%;
+}
+.comments .comments-content .icon.blog-author {
+    background-image: url("https://lh3.googleusercontent.com/-s2RfYvCPTEs/UcPAX8GIW3I/AAAAAAAAB44/p9wq9yXuULE/s36/author.png");
+    height: 36px;
+    margin: 0;
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    width: 36px;
+}
+.comments .comments-content .inline-thread {
+    padding: 0 0 0 20px;
+}
+.comments .comments-content .comment-replies {
+    margin-top: 0;
+}
+.comments .comment-content {
+    line-height: 1.4em;
+    padding: 5px 0;
+}
+.comments .comment-thread.inline-thread {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-left: 1px solid #DDDDDD;
+}
+.comments .comment-thread.inline-thread .comment {
+    width: auto;
+}
+.comments .comment-thread.inline-thread .comment:after {
+    border-top: 1px solid #DDDDDD;
+    content: "";
+    height: 0;
+    left: -20px;
+    position: absolute;
+    top: 10px;
+    width: 10px;
+}
+.comments .comment-thread.inline-thread .comment .comment-block {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    padding: 0;
+}
+.comments .comment-thread.inline-thread .comment-block {
+    margin-left: 48px;
+}
+.comments .comment-thread.inline-thread .user a {
+    font-size: 13px;
+}
+.comments .comment-thread.inline-thread .avatar-image-container, .comments .comment-thread.inline-thread .avatar-image-container img {
+    height: 36px;
+    max-height: 36px;
+    max-width: 36px;
+    width: 36px;
+}
+.comments .continue {
+    border-top: 0 none;
+    width: 100%;
+}
+.comments .continue a {
+    padding: 10px 0;
+    text-align: center;
+}
+.comment .continue {
+    display: none;
+}
+#comment-editor {
+    width: 103% !important;
+}
+.comment-form {
+    max-width: 100%;
+    width: 100%;
+}
+.comments .comments-content .loadmore, .comments .comments-content {
+    margin: 0;
+}
+#blog-pager-newer-link {
+    float: left;
+}
+#blog-pager-older-link {
+    float: right;
+}
+#blog-pager {
+    clear: both;
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+}
+#footer {
+    background: url("https://lh3.googleusercontent.com/-1QB3XFmdlYY/UcPyBWfyb4I/AAAAAAAAB74/ITrfhAVjwNI/s67/pattern.png") repeat-x scroll 0 0 #FFFFFF;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    padding: 20px 0;
+}
+#footer a {
+    font-weight: bold;
+}
+#PopularPosts1 img {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 2px;
+    float: left;
+    margin-right: 15px;
+    padding: 3px;
+}
+#PopularPosts1 dd {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 20px;
+}
+#PopularPosts1 dd:hover {
+    background-color: #F9F9F9;
+}
+#PopularPosts1 dd a {
+    color: #666666;
+}
+.status-msg-body {
+    position: relative !important;
+}
+.CSS_LIGHTBOX {
+    z-index: 9999 !important;
+}
+.fblike {
+    height: 20px;
+    max-width: 84px;
+    padding: 8px 0 3px 13px;
+}
+.post-share-buttons {
+    margin-left: 46px;
+    margin-top: 20px;
+}
+.post_author {
+    background: url("http://3.bp.blogspot.com/-JXfK65UVMtE/U7XCR5RPenI/AAAAAAAAAZc/mnYN-G17U6g/s1600/patterddddn.png") repeat scroll 0 0 #FFFFFF;
+    border-top: 1px solid #EDEDED;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.post_author {
+    
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+box-shadow: -5px 5px 13px -5px #000;
+-moz-box-shadow:-5px 5px 13px -5px #000;
+webkit-box-shadow:-5px 5px 13px -5px #000;
+}
+.post_author h4 {
+    font-size: 18px;
+}
+.post_author .author_avatar {
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+.post_author .author_avatar img {
+    display: block;
+}
+.post_author .author_wrapper {
+    margin-left: 120px;
+}
+.post_author h4 {
+    margin-bottom: 5px;
+}
+.post_author p {
+    margin: 0;
+    padding: 0;
+}
+.small_thumb {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 2px;
+    padding: 3px;
+}
+#related-posts {
+    background-color: #FFFFFF;
+    
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+#related-posts ul {
+    padding: 0 10px;
+display:flex;
+}
+#related-posts ul li {
+    -moz-box-sizing: border-box;
+    float: left;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    width: 25%;
+}
+.pthumb {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 2px;
+    height: 97px;
+    margin: 0 0 10px;
+    overflow: hidden;
+    padding: 3px;
+    width: 129px;
+}
+.pthumb img {
+    height: 97px;
+    width: 129px;
+}
+#related-posts img:hover {
+    opacity: 0.7;
+}
+#related-posts ul li:nth-child(4n+4) {
+    margin-right: 0;
+}
+.heading-border {
+    background: none repeat scroll 0 0 #424242;
+    color: #24D4CD;
+    font-size: 22px;
+    margin: 0 0 20px;
+    padding: 10px 20px;
+    box-shadow: -2px 2px 0px 0px #000 inset;
+-moz-box-shadow: -2px 2px 0px 0px #000 inset;
+-webkit-box-shadow:-2px 2px 0px 0px #000 inset;
+}
+.FollowByEmail {
+    background-color: #E74C3C !important;
+    background-image: url("https://lh3.googleusercontent.com/-1QB3XFmdlYY/UcPyBWfyb4I/AAAAAAAAB74/ITrfhAVjwNI/s67/pattern.png");
+    background-repeat: repeat-x;
+    border: 5px solid #FFFFFF;
+    color: #FFFFFF;
+}
+.FollowByEmail h2 {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: medium none;
+    border-radius: 0;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    padding: 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.FollowByEmail .newsletter_inner {
+    padding: 25px 20px;
+}
+.FollowByEmail p {
+    margin-bottom: 30px;
+}
+.FollowByEmail .letter_email {
+    line-height: normal;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.FollowByEmail .letter_submit {
+    background: url("https://lh6.googleusercontent.com/-VHd-MUXwJmQ/UcPx8zFDwjI/AAAAAAAAB5Y/qY_VtSSDbT8/s32/button.png") repeat-x scroll center bottom #666666;
+    border: medium none;
+    margin: 0;
+}
+.FollowByEmail .letter_submit:hover {
+    opacity: 0.8;
+}
+.widget_socials .social_wrapper {
+    padding: 20px 20px 10px;
+}
+.widget_socials .social_inner {
+    margin-right: -20px;
+}
+.widget_socials p {
+    margin-bottom: 30px;
+}
+.widget_socials a {
+    background-color: #888888;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    float: left;
+    height: 35px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    text-indent: 9999em;
+    width: 35px;
+}
+.widget_socials a:hover {
+    background-color: #666666 !important;
+}
+.widget_socials a.facebook {
+    background-color: #6F85AE;
+    background-image: url("https://lh3.googleusercontent.com/-ifDeD3iKioY/UcPx90L45OI/AAAAAAAAB6A/ObECkCist50/s24/facebook.png");
+}
+.widget_socials a.twitter {
+    background-color: #23B6C6;
+    background-image: url("https://lh5.googleusercontent.com/-ORgZZWh5n_I/UcPyEBWt1tI/AAAAAAAAB9E/YCY8K1egwSs/s24/twitter.png");
+}
+.widget_socials a.flickr {
+    background-color: #FF0084;
+    background-image: url("https://lh3.googleusercontent.com/-H4N0uYEwjBk/UcPx95Y8SII/AAAAAAAAB6E/ciYk7tJP6K0/s24/flickr.png");
+}
+.widget_socials a.dribbble {
+    background-color: #C6376D;
+    background-image: url("https://lh6.googleusercontent.com/-DHQ25c_6w_E/UcPx9kiYk7I/AAAAAAAAB54/6-4jSV0gsFY/s24/dribbble.png");
+}
+.widget_socials a.vimeo {
+    background-color: #20B9EB;
+    background-image: url("https://lh5.googleusercontent.com/-kI8F8zOCSSA/UcPyEbKEGcI/AAAAAAAAB9U/8Ancbp9MIMM/s24/vimeo.png");
+}
+.widget_socials a.tumblr {
+    background-color: #2E4B68;
+    background-image: url("https://lh3.googleusercontent.com/-Dtw42nPOLhY/UcPyDjtZmgI/AAAAAAAAB84/djpN4lQZdPE/s24/tumblr.png");
+}
+.widget_socials a.rss {
+    background-color: #FA7204;
+    background-image: url("https://lh4.googleusercontent.com/-EbEXnpN-RIs/UcPyCZPXClI/AAAAAAAAB8Q/IDEpJmzqkuU/s24/rss.png");
+}
+.widget_socials a.linkedin {
+    background-color: #006699;
+    background-image: url("https://lh5.googleusercontent.com/-gAsnBv-K_hk/UcPx_FpxF2I/AAAAAAAAB6o/l07Bq86UHSE/s24/linkedin.png");
+}
+.widget_socials a.youtube {
+    background-color: #DD3D3D;
+    background-image: url("https://lh6.googleusercontent.com/-aVPy7jN4T7Q/UcPyEV_ljFI/AAAAAAAAB9Q/cVUbI1P1FTg/s24/youtube.png");
+}
+.widget_socials a.google_plus {
+    background-color: #DD3D3D;
+    background-image: url("https://lh3.googleusercontent.com/-H8fbtEHl9yw/UcPx-RGuARI/AAAAAAAAB6Q/7j9H_Ry5_m4/s24/google%252B.png");
+}
+.widget_socials a.pinterest {
+    background-color: #C9242D;
+    background-image: url("https://lh5.googleusercontent.com/-pGslChgpGfU/UcPyB_-yhgI/AAAAAAAAB8A/H8IyIF4IDG8/s24/pinterest.png");
+}
+.widget_socials a.instagram {
+    background-color: #1B577D;
+    background-image: url("https://lh6.googleusercontent.com/-eIdoWi7bEVc/UcPx-5tP-cI/AAAAAAAAB6g/OLK97uwHujA/s24/instagram.png");
+}
+
+]]></b:skin>
+
+ 
+
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+<style>
+div.post_item:after {
+content: &quot; &quot;;
+position: absolute;
+display: block;
+bottom: -1.6875rem;
+right: 0.5625rem;
+width: 0;
+height: 0;
+border-top: 2.5rem solid transparent;
+border-bottom: 2.5rem solid transparent;
+border-right: 2.5rem solid #252525;
+-webkit-transform: rotate(225deg);
+transform: rotate(225deg);
+}
+div.post_item:before {
+position: absolute;
+bottom: 0.2rem;
+right: 1.5rem;
+content: &quot;\f005&quot;;
+color: #fff;
+font-family: &quot;FontAwesome&quot;;
+font-size: 1rem;
+display: block;
+    z-index: 2;}
+  </style>
+</b:if>
+<!--custom sidebar-->
+<style>
+  .like_post{display:none;}
+  img#Header1_headerimg{margin-left:8px;}
+a#Blog1_blog-pager-older-link {
+border: 2px solid #000;
+padding: 5px 8px;
+line-height: 3;
+color: #fff;
+border-radius: 4px;
+}
+  a#Blog1_blog-pager-newer-link{border: 2px solid #000;
+padding: 5px 8px;
+line-height: 3;
+color: #fff;
+border-radius: 4px;}
+
+  a.home-link{border: 2px solid #000;
+padding: 5px 25px;
+line-height: 3;
+color: #fff;
+border-radius: 4px;}
+
+
+  .side1{
+background-color: #0C0C0C;
+bottom: 0;
+left: 0;
+position: fixed;
+top: 0;
+width: 200px;
+display: block;
+height: 100%;
+}
+</style>
+
+<style type='text/css'>
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+#sidebar-wrapper{display:none}
+.column,.columns{float:left;min-height:1px;padding:0 15px;position:relative;margin-bottom:30px}
+.columns{width:33.2%}
+<b:else/>
+.columns{padding:0 15px;margin-bottom:30px}
+#main .columns{padding:0}
+#leftContent{float:left;width:70%}
+.post_item{padding:30px 50px;border-bottom-right-radius:0;border-bottom-left-radius:0}
+.post_meta{background:none;border:none;margin-bottom:20px;padding:0}
+#leftContent .inner{}
+.masonry-brick{width:100%;float:none;padding:0 14px;margin-bottom:14px}
+@media only screen and (max-width: 767px) { 
+.post_item{padding:14px}  
+.post-body img {max-width:100%}
+    
+}
+</b:if>
+.row .twelve{width:97%}
+.container{width: 85%;
+max-width: 100%;
+position:absolute;
+margin: 0 auto;
+float: right;
+
+margin-left:200px;
+margin-top:15px;}
+.row .column,.row .columns{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.row{max-width:100%;margin:0 auto}
+.row .row{width:auto;max-width:none;min-width:0;margin:0 -15px}
+.column,.columns{float:left;min-height:1px;padding:0 15px;position:relative;margin-bottom:30px}
+.column.end,.columns.end{float:right}
+.column.wrapper,.columns.wrapper{margin-bottom:0}
+.row:before,.row:after{content:&quot; &quot;;display:table}
+.row:after{clear:both}
+img{max-width:100%;height:auto;-ms-interpolation-mode:bicubic}
+object,embed,iframe{max-width:100%}
+@media only screen and (max-width: 959px) {
+.row .row{margin:0 -10px}
+.column,.columns{padding:0 10px;margin-bottom:20px}
+.top_wrapper{margin-bottom:20px}
+#header-wrapper{padding-top:20px}
+#header-wrapper .socials{display:none}
+#top_menu{right:10px}
+#top_menu .sf-menu i{display:none}
+#leftContent{width:auto;float:none;margin:0}
+#leftContent .inner{margin:0}
+.post_content{margin:0 -10px}
+.post_single{margin-bottom:20px}
+#sidebar-wrapper{display:none}
+#footer{padding-top:20px}
+}	
+@media only screen and (max-width: 767px) {
+.row .row{width:auto;max-width:none;min-width:0;margin:0 -10px}
+.container{width:auto;max-width:500px;margin:0 auto;min-width:0}
+#post_grids .column,#post_grids .columns{width:100%;float:none;padding:0 14px;margin-bottom:14px}
+.column:last-child,.columns:last-child{float:none}
+[class*=&quot;column&quot;] + [class*=&quot;column&quot;]:last-child{float:none}
+.column:before,.columns:before,.column:after,.columns:after{content:&quot;&quot;;display:table}
+.column:after,.columns:after{clear:both}
+.top_wrapper{margin-bottom:14px}
+#header-wrapper{padding-top:14px}
+#header-wrapper .header_left,#header-wrapper .header_right{float:none;width:auto}
+#header-wrapper .header_left{margin-bottom:30px}
+#top_menu{position:relative;background-color:#06F;right:0}
+#header{float:none;text-align:center;margin:0;margin-bottom:10px}
+#header img{display:inline;margin:0 auto}
+#top_menu{float:none;width:auto}
+#top_menu .sf-menu,.header_search{display:none}
+#top_menu span.nav_select,.select_menu{display:block}
+#leftContent{width:auto;float:none;margin:0}
+#leftContent .inner{margin:0}
+.white_box .white_box_inner{padding:10px}
+.slider .caption_wrapper{display:none}
+.slider .caption,.slider .flex-direction-nav{display:none}
+.post_item_inner,.post_single_inner{padding:14px}
+.post_single{margin-bottom:14px}
+.social_share,.post_author{display:none}
+#related-posts ul li{width:50%}
+#footer{padding-top:14px}
+}
+@media only screen and (max-width: 460px) {
+.related_posts .rp_col { float: none; width:auto; }
+}
+</style>
+<script type='text/javascript'>//<![CDATA[
+function stripTags(s, n) {
+    return s.replace(/<.*?>/ig, "").split(/\s+/).slice(0, n - 1).join(" ")
+}
+
+function readmore(a) {
+    var p = document.getElementById(a),
+        imgtag = "",
+        img = p.getElementsByTagName("img");
+    if (img.length >= 1) imgtag = '<img class="thumb" src="' + img[0].src + '" />';
+    else imgtag = '<img class="thumb no-img" src="https://lh4.googleusercontent.com/-G9M2DTCTUwM/Tlh-2pwtc5I/AAAAAAAABKM/kCJg-Kf3W2M/no_image_yet.jpg" />';
+    p.innerHTML = '<a href="' + y + '"><div class="large_thumb thumb_hover"><div class="img_wrapper">' + imgtag + "</div></div></a>" + '<h3 class="post_item_title"><a rel="bookmark" href="' + y + '">' + x + "</a></h3>" + '<div class="post_meta"><span class="user">by <span style="color: #E74C3C;">' + z + '</span></span> <span class="time">' + t + "</span></div>" + '<div class="post_item_inner"><p>' + stripTags(p.innerHTML, 20) + '...</p><a class="button normal" rel="bookmark" href="' + y + '">Read More</a><span class="like_post"><iframe class="fblike" allowTransparency="true" frameborder="0" scrolling="no" src="http://www.facebook.com/plugins/like.php?href=' + y + '&send=false&layout=button_count&show_faces=false&width=79&action=like&colorscheme=light"></iframe></span><div class="clear"></div></div>'
+};
+//]]></script>
+</head>
+<body>
+<script src='http://connect.facebook.net/en_US/all.js#xfbml=1'/>
+  <style>
+#left-sidebar-wrap {
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 200px;
+}
+
+#sidebar-top{
+    top: 0;
+    left: 0;
+    width: 200px;
+    text-align: center;
+    
+	margin-bottom: 30px;
+}
+
+#sidebar-top #logo {
+    color: #666666;
+    display: table-cell; /* for vertical alignment */
+    font-family: &#39;oswaldlight&#39;;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 43px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 200px;
+}
+
+#sidebar-top #logo-text {
+    display: block;
+    padding: 30px 10px 0;
+    text-align: left;
+}
+
+#sidebar-top #logo img{
+    max-width: 100%;
+}	
+	#sidebar-wrap {
+    
+    color: #A1A1A1;
+    overflow-y: auto;
+    padding: 0px 15px 10px 20px;
+    text-align: right;
+    width: 165px;
+}
+
+#sidebar-wrap.popup {
+	overflow-y: visible;
+}
+
+#sidebar-wrap.fixed{
+    position: fixed;
+    top: 10px;
+	height: 100%;
+	z-index: 100;
+}
+
+#sidebar,
+#sidebar a,
+#sidebar a:visited,
+#sidebar-right,
+#sidebar-right a,
+#sidebar-right a:visited{
+    color: #666;
+}
+
+#main-menu, #secondary-menu{
+    font-family: oswald;
+}
+
+#main-menu li{
+    color: #808080;
+    font-size: 21px;
+    line-height: 120%;
+    margin: 0 0 4px;
+    text-transform: uppercase;
+	position: relative;
+}
+
+#sidebar #main-menu .sub-menu li{
+    line-height: 120%;
+    font-size: 14px;
+    margin-bottom: 0;
+    text-transform: none;
+	margin-top: 3px;
+}
+
+#secondary-menu li{
+    line-height: 130%;
+    font-size: 15px;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+#secondary-menu{
+    margin-top: 50px;
+}
+
+/* popup submenu */
+@media all and (min-width: 701px){
+	.popup .sub-menu {
+		background-color: #000000;
+		display: none;
+		left: 180px;
+		padding: 10px 20px;
+		position: absolute;
+		text-align: left;
+		top: -45px;
+		width: 300px;
+		z-index: 999;
+		/*
+		-moz-column-count: 2; 
+		-webkit-column-count: 2; 
+		column-count: 2;
+		*/
+	}
+	
+	.popup .sub-menu .sub-menu {	
+		left: 330px;
+	}
+	
+	.popup .sub-menu:before {
+		background: url(&quot;images/submenu_arrow.png&quot;) no-repeat scroll 100% 45px rgba(0, 0, 0, 0);
+		content: &quot;&quot;;
+		display: block;
+		height: 100%;
+		left: -40px;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 40px;
+	}
+
+	.popup #main-menu li:hover &gt; .sub-menu {
+		display: block;
+	}
+
+	.popup #main-menu .sub-menu li a, 
+	.popup #main-menu .sub-menu li a:visited {
+		color: #FFFFFF;
+	}
+
+	.popup #sidebar #main-menu .sub-menu li {
+		padding: 5px 0;
+	}
+}
+
+
+
+/* =Social menu
+----------------------------------------------- */
+#social-menu{
+    margin-top: 55px;
+	text-align: right;
+}
+
+#social-menu a {
+    display: block;
+    float: right;
+    font-family: &#39;icomoon&#39;;
+    font-size: 22px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    color: #ccc;
+	width: 20px;
+	height: 20px;
+}
+
+#social-menu a, #social-menu a:visited{
+    color: #6A6869;
+}
+
+#social-menu .icon-facebook-rounded:hover{
+	color: #45619D;
+}
+
+#social-menu .icon-twitter:hover{
+	color: #1AB2E8;
+}
+
+#social-menu .icon-youtube:hover{
+	color: #C2302A;
+}
+
+#social-menu .icon-soundcloud-rounded:hover{
+	color: #F96604;
+}
+
+#social-menu .icon-flickr-rounded:hover{
+	color: #F3006F;
+}
+
+#social-menu .icon-google-rounded:hover{
+    color: #201f1d;
+}
+
+#social-menu .icon-vimeo-rounded:hover{
+    color: #229acc;
+}
+
+#social-menu .icon-linkedin-rounded:hover{
+    color: #0274b3;
+}
+
+#social-menu .icon-pinterest-rounded:hover{
+    color: #cb2027;
+}
+
+#social-menu .icon-picassa-rounded:hover{
+    color: #9864ae;
+}
+
+#social-menu .icon-instagram:hover{
+    color: #8c5d4d;
+}
+
+#social-menu .icon-tumblr-rounded:hover{
+    color: #34506b;
+}
+
+#social-menu .icon-deviantart-rounded:hover{
+    color: #000;
+}
+
+#social-menu .icon-dribbble-rounded:hover{
+    color: #e24d85;
+}
+
+#social-menu .icon-reddit:hover{
+    color: #000;
+}
+
+#social-menu .icon-behance-rounded:hover{
+    color: #2d9ad2;
+}
+
+#social-menu .icon-feed-rounded:hover{
+    color: #f68026;
+}
+
+#copy{
+    display: block;
+    margin-top: 140px;
+    font-size: 12px;
+    line-height: 130%;
+    color: #757171;
+}
+
+#sidebar-bg {
+    background-color: #FFFFFF;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 200px;
+	display: block;
+	height: 100%;
+}
+
+
+
+</style>
+  <div class='side1'>
+<div id='sidebar-top'>
+
+
+
+
+<b:section class='is-retina' id='logo' showaddelement='yes'>
+  <b:widget id='Header1' locked='false' title='Dream Grid (Header)' type='Header'>
+    <b:includable id='main'>
+
+  <b:if cond='data:useImage'>
+    <b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
+      <!--
+      Show image as background to text. You can't really calculate the width
+      reliably in JS because margins are not taken into account by any of
+      clientWidth, offsetWidth or scrollWidth, so we don't force a minimum
+      width if the user is using shrink to fit.
+      This results in a margin-width's worth of pixels being cropped. If the
+      user is not using shrink to fit then we expand the header.
+      -->
+      <b:if cond='data:mobile'>
+          <div id='header-inner'>
+            <div class='titlewrapper' style='background: transparent'>
+              <h1 class='title' style='background: transparent; border-width: 0px'>
+                <b:include name='title'/>
+              </h1>
+            </div>
+            <b:include name='description'/>
+          </div>
+        <b:else/>
+          <div expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot;                        + &quot;background-position: &quot;                        + data:backgroundPositionStyleStr + &quot;; &quot;                        + data:widthStyleStr                        + &quot;min-height: &quot; + data:height                        + &quot;_height: &quot; + data:height                        + &quot;background-repeat: no-repeat; &quot;' id='header-inner'>
+            <div class='titlewrapper' style='background: transparent'>
+              <h1 class='title' style='background: transparent; border-width: 0px'>
+                <b:include name='title'/>
+              </h1>
+            </div>
+            <b:include name='description'/>
+          </div>
+        </b:if>
+    <b:else/>
+      <!--Show the image only-->
+      <div id='header-inner'>
+        <a expr:href='data:blog.homepageUrl' style='display: block'>
+          <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' expr:width='data:width' style='display: block'/>
+        </a>
+        <!--Show the description-->
+        <b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'>
+          <b:include name='description'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <!--No header image -->
+    <div id='header-inner'>
+      <div class='titlewrapper'>
+        <h1 class='title'>
+          <b:include name='title'/>
+        </h1>
+      </div>
+      <b:include name='description'/>
+    </div>
+  </b:if>
+</b:includable>
+    <b:includable id='description'>
+  <div class='descriptionwrapper'>
+    <p class='description'><span><data:description/></span></p>
+  </div>
+</b:includable>
+    <b:includable id='title'>
+  <b:if cond='data:blog.url == data:blog.homepageUrl'>
+    <data:title/>
+  <b:else/>
+    <a expr:href='data:blog.homepageUrl'><data:title/></a>
+  </b:if>
+</b:includable>
+  </b:widget>
+</b:section>
+
+
+
+
+			
+	</div>
+<div class='popup' id='sidebar-wrap'>
+		<div id='sidebar'>
+			<div id='main-menu'>
+				<div class='menu-main-menu-container'><ul class='menu' id='menu-main-menu'><li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-170' id='menu-item-170'><a href='#'>Typography</a></li>
+<li class='menu-item menu-item-type-taxonomy menu-item-object-category menu-item-107' id='menu-item-107'><a href='#'>Blog</a></li>
+<li class='menu-item menu-item-type-taxonomy menu-item-object-category menu-item-339' id='menu-item-339'><a href='#'>Grid Category</a></li>
+<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-295' id='menu-item-295'><a href='#'>Gallery</a></li>
+<li class='menu-item menu-item-type-custom menu-item-object-custom menu-item-184' id='menu-item-184'><a href='#'>Contact us</a></li>
+<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-43' id='menu-item-43'><a href='#'>Download</a></li>
+<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-96' id='menu-item-96'><a href='#'>Purchase</a>
+</li>
+</ul></div>			</div>
+			<div id='secondary-menu'>
+			<div class='menu-secondary-container'>
+			
+		
+</div>			</div>
+			<div class='clearfix' id='social-menu'>
+              <a class='icon-facebook-rounded' href='https://www.facebook.com/alistarbot' target='_blank'><i class='fa fa-facebook-square'/></a><a class='icon-twitter' href='https://twitter.com/alistarbot' target='_blank'><i class='fa fa-twitter-square'/></a><a class='icon-youtube' href='#' target='_blank'><i class='fa fa-youtube-play'/></a><a class='icon-google-rounded' href='https://plus.google.com/+alistarbot' target='_blank'><i class='fa fa-google-plus-square'/></a><a class='icon-vimeo-rounded' href='#' target='_blank'><i class='fa fa-vimeo-square'/></a><a class='icon-linkedin-rounded' href='#' target='_blank'><i class='fa fa-linkedin-square'/></a><a class='icon-pinterest-rounded' href='#' target='_blank'><i class='fa fa-pinterest-square'/></a><a class='icon-instagram' href='#' target='_blank'><i class='fa fa-instagram'/></a><a class='icon-tumblr-rounded' href='#' target='_blank'><i class='fa fa-tumblr-square'/></a><a class='icon-feed-rounded' href='#' target='_blank'><i class='fa fa-rss-square'/></a>			</div> <!-- #social-menu -->
+					</div> <!-- #sidebar -->
+	</div>
+</div>
+<div class='container'>
+<div class='row'>
+<div class='twelve columns'>
+<div id='leftContent'>
+<div class='inner'>
+<b:section class='main' id='main' showaddelement='no'>
+  <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+    <b:includable id='main' var='top'>
+  <b:if cond='data:mobile == &quot;false&quot;'>
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+&lt;div id=&#39;post_grids&#39; class=&#39;row&#39;&gt;
+</b:if>
+      <b:include data='top' name='status-message'/>
+      <b:loop values='data:posts' var='post'>
+        <b:include data='post' name='post'/>
+        <b:if cond='data:blog.pageType != &quot;index&quot;'>
+          <b:if cond='data:post.showThreadedComments'>
+            <b:include data='post' name='threaded_comments'/>
+          <b:else/>
+            <b:include data='post' name='comments'/>
+          </b:if>
+        </b:if>
+      </b:loop>
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+&lt;/div&gt;
+</b:if>
+    <!-- navigation -->
+    <b:include name='nextprev'/>
+
+    <!-- feed links -->
+    <b:include name='feedLinks'/>
+
+    <b:if cond='data:top.showStars'>
+      <script src='//www.google.com/jsapi' type='text/javascript'/>
+      <script type='text/javascript'>
+        google.load(&quot;annotations&quot;, &quot;1&quot;, {&quot;locale&quot;: &quot;<data:top.languageCode/>&quot;});
+        function initialize() {
+          google.annotations.setApplicationId(<data:top.blogspotReviews/>);
+          google.annotations.createAll();
+          google.annotations.fetch();
+        }
+        google.setOnLoadCallback(initialize);
+      </script>
+    </b:if>
+
+  <b:else/>
+    <b:include name='mobile-main'/>
+  </b:if>
+
+  <b:if cond='data:top.showDummy'>
+    <data:top.dummyBootstrap/>
+  </b:if>
+
+</b:includable>
+    <b:includable id='backlinkDeleteIcon' var='backlink'>
+  <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
+    <a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
+      <img src='//www.blogger.com/img/icon_delete13.gif'/>
+    </a>
+  </span>
+</b:includable>
+    <b:includable id='backlinks' var='post'>
+  <a name='links'/><h4><data:post.backlinksLabel/></h4>
+  <b:if cond='data:post.numBacklinks != 0'>
+    <dl class='comments-block' id='comments-block'>
+      <b:loop values='data:post.backlinks' var='backlink'>
+        <div class='collapsed-backlink backlink-control'>
+          <dt class='comment-title'>
+            <span class='backlink-toggle-zippy'>&#160;</span>
+            <a expr:href='data:backlink.url' rel='nofollow'><data:backlink.title/></a>
+            <b:include data='backlink' name='backlinkDeleteIcon'/>
+          </dt>
+          <dd class='comment-body collapseable'>
+            <data:backlink.snippet/>
+          </dd>
+          <dd class='comment-footer collapseable'>
+            <span class='comment-author'><data:post.authorLabel/> <data:backlink.author/></span>
+            <span class='comment-timestamp'><data:post.timestampLabel/> <data:backlink.timestamp/></span>
+          </dd>
+        </div>
+      </b:loop>
+    </dl>
+  </b:if>
+  <p class='comment-footer'>
+    <a class='comment-link' expr:href='data:post.createLinkUrl' expr:id='data:widget.instanceId + &quot;_backlinks-create-link&quot;' target='_blank'><data:post.createLinkLabel/></a>
+  </p>
+</b:includable>
+    <b:includable id='comment-form' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <b:if cond='data:mobile'>
+      <h4 id='comment-post-message'>
+        <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' href='javascript:void(0)'><data:postCommentMsg/></a></h4>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
+    <b:else/>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    </b:if>
+    <data:post.friendConnectJs/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
+    </script>
+  </div>
+</b:includable>
+    <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:top.deleteCommentMsg'>
+        <img src='//www.blogger.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+    <b:includable id='comment_count_picker' var='post'>
+  <b:if cond='data:post.forceIframeComments'>
+    <span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-url='data:post.canonicalUrl'>
+    </span>
+  <b:else/>
+    <b:if cond='data:post.commentSource == 1'>
+      <span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-url='data:post.canonicalUrl'>
+      </span>
+    <b:else/>
+      <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>
+        <data:post.commentLabelFull/>:
+      </a>
+    </b:if>
+  </b:if>
+</b:includable>
+    <b:includable id='comment_picker' var='post'>
+  <b:if cond='data:post.forceIframeComments'>
+    <b:include data='post' name='iframe_comments'/>
+    <b:if cond='data:post.showThreadedComments'>
+      <b:include data='post' name='threaded_comments'/>
+    <b:else/>
+      <b:include data='post' name='comments'/>
+    </b:if>
+  <b:else/>
+    <b:if cond='data:post.commentSource == 1'>
+      <b:include data='post' name='iframe_comments'/>
+    <b:else/>
+      <b:if cond='data:post.showThreadedComments'>
+        <b:include data='post' name='threaded_comments'/>
+      <b:else/>
+        <b:include data='post' name='comments'/>
+      </b:if>
+    </b:if>
+  </b:if>
+</b:includable>
+    <b:includable id='comments' var='post'>
+  <div class='comments' id='comments'>
+    <a name='comments'/>
+    <b:if cond='data:post.allowComments'>
+      <h4>
+        <b:if cond='data:post.numComments == 1'>
+          1 <data:commentLabel/>:
+        <b:else/>
+          <data:post.numComments/> <data:commentLabelPlural/>:
+        </b:if>
+      </h4>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <span class='paging-control-container'>
+          <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'><data:post.oldestLinkText/></a>
+          &#160;
+          <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'><data:post.olderLinkText/></a>
+          &#160;
+          <data:post.commentRangeText/>
+          &#160;
+          <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'><data:post.newerLinkText/></a>
+          &#160;
+          <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'><data:post.newestLinkText/></a>
+        </span>
+      </b:if>
+
+      <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+        <div expr:class='data:post.avatarIndentClass' id='comments-block'>
+          <b:loop values='data:post.comments' var='comment'>
+            <div expr:class='&quot;comment-author &quot; + data:comment.authorClass' expr:id='data:comment.anchorName'>
+              <b:if cond='data:comment.favicon'>
+                <img expr:src='data:comment.favicon' height='16px' style='margin-bottom:-2px;' width='16px'/>
+              </b:if>
+              <a expr:name='data:comment.anchorName'/>
+              <b:if cond='data:blog.enabledCommentProfileImages'>
+                <data:comment.authorAvatarImage/>
+              </b:if>
+              <b:if cond='data:comment.authorUrl'>
+                <a expr:href='data:comment.authorUrl' rel='nofollow'><data:comment.author/></a>
+              <b:else/>
+                <data:comment.author/>
+              </b:if>
+              <data:commentPostedByMsg/>
+            </div>
+            <div class='comment-body' expr:id='data:widget.instanceId + data:comment.cmtBodyIdPostfix'>
+              <b:if cond='data:comment.isDeleted'>
+                <span class='deleted-comment'><data:comment.body/></span>
+              <b:else/>
+                <p>
+                  <data:comment.body/>
+                </p>
+              </b:if>
+            </div>
+            <div class='comment-footer'>
+              <span class='comment-timestamp'>
+                <a expr:href='data:comment.url' title='comment permalink'>
+                  <data:comment.timestamp/>
+                </a>
+                <b:include data='comment' name='commentDeleteIcon'/>
+              </span>
+            </div>
+          </b:loop>
+        </div>
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <span class='paging-control-container'>
+          <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+            <data:post.oldestLinkText/>
+          </a>
+          <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+            <data:post.olderLinkText/>
+          </a>
+          &#160;
+          <data:post.commentRangeText/>
+          &#160;
+          <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+            <data:post.newerLinkText/>
+          </a>
+          <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+            <data:post.newestLinkText/>
+          </a>
+        </span>
+      </b:if>
+
+      <p class='comment-footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='comment-form'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:post.allowComments'>
+            <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
+          </b:if>
+        </b:if>
+
+      </p>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+
+    <div id='backlinks-container'>
+    <div expr:id='data:widget.instanceId + &quot;_backlinks-container&quot;'>
+       <b:if cond='data:post.showBacklinks'>
+         <b:include data='post' name='backlinks'/>
+       </b:if>
+    </div>
+    </div>
+  </div>
+</b:includable>
+    <b:includable id='feedLinks'>
+  <b:if cond='data:blog.pageType != &quot;item&quot;'> <!-- Blog feed links -->
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+
+    <b:else/> <!--Post feed links -->
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments'>
+          <b:if cond='data:post.feedLinks'>
+            <b:include data='post.feedLinks' name='feedLinksBody'/>
+          </b:if>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+    <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:feedLinksMsg/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+    <b:includable id='iframe_comments' var='post'>
+
+  <b:if cond='data:post.allowIframeComments'>
+    <script expr:src='data:post.iframeCommentSrc' type='text/javascript'/>
+    <div class='cmt_iframe_holder'/>
+
+    <b:if cond='data:post.embedCommentForm == &quot;false&quot;'>
+      <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
+    </b:if>
+  </b:if>
+</b:includable>
+    <b:includable id='mobile-index-post' var='post'>
+  <div class='mobile-date-outer date-outer'>
+    <div class='mobile-post-outer'>
+      <a expr:href='data:post.url'>
+        <h3 class='mobile-index-title entry-title'>
+          <data:post.title/>
+        </h3>
+
+        <div class='mobile-index-arrow'>&amp;rsaquo;</div>
+
+        <div class='mobile-index-contents'>
+          <b:if cond='data:post.thumbnailUrl'>
+            <div class='mobile-index-thumbnail'>
+              <div class='Image'>
+                <img expr:src='data:post.thumbnailUrl'/>
+              </div>
+            </div>
+          </b:if>
+
+          <div class='post-body'>
+            <b:if cond='data:post.snippet'><data:post.snippet/></b:if>
+          </div>
+        </div>
+
+        <div style='clear: both;'/>
+      </a>
+
+      <div class='mobile-index-comment'>
+        <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+          <b:if cond='data:post.allowComments'>
+            <b:if cond='data:post.numComments != 0'>
+              <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+            </b:if>
+          </b:if>
+        </b:if>
+      </div>
+    </div>
+  </div>
+</b:includable>
+    <b:includable id='mobile-main' var='top'>
+    <!-- posts -->
+    <div class='blog-posts hfeed'>
+      <b:include data='top' name='status-message'/>
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+        <b:loop values='data:posts' var='post'>
+          <b:include data='post' name='mobile-index-post'/>
+        </b:loop>
+      <b:else/>
+        <b:loop values='data:posts' var='post'>
+          <b:include data='post' name='mobile-post'/>
+        </b:loop>
+      </b:if>
+    </div>
+
+   <b:include name='mobile-nextprev'/>
+</b:includable>
+    <b:includable id='mobile-nextprev'>
+  <div class='blog-pager' id='blog-pager'>
+    <b:if cond='data:newerPageUrl'>
+      <div class='mobile-link-button' id='blog-pager-newer-link'>
+      <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>&amp;lsaquo;</a>
+      </div>
+    </b:if>
+
+    <b:if cond='data:olderPageUrl'>
+      <div class='mobile-link-button' id='blog-pager-older-link'>
+      <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>&amp;rsaquo;</a>
+      </div>
+    </b:if>
+
+    <div class='mobile-link-button' id='blog-pager-home-link'>
+    <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
+    </div>
+
+    <div class='mobile-desktop-link'>
+      <a class='home-link' expr:href='data:desktopLinkUrl'><data:desktopLinkMsg/></a>
+    </div>
+
+  </div>
+  <div class='clear'/>
+</b:includable>
+    <b:includable id='mobile-post' var='post'>
+  <div class='date-outer'>
+    <div class='date-posts'>
+      <div class='post-outer'>
+
+        <div class='post'>
+          <b:if cond='data:post.title'>
+            <h3 class='post-title'>
+              <b:if cond='data:post.link'>
+                <a expr:href='data:post.link'><data:post.title/></a>
+              <b:else/>
+                <b:if cond='data:post.url'>
+                  <b:if cond='data:blog.url != data:post.url'>
+                    <a expr:href='data:post.url'><data:post.title/></a>
+                  <b:else/>
+                    <data:post.title/>
+                  </b:if>
+                <b:else/>
+                  <data:post.title/>
+                </b:if>
+              </b:if>
+            </h3>
+          </b:if>
+
+          <div class='post-header'/>
+
+          <div class='post-body'>
+            <data:post.body/>
+            <div class='clear'/> 
+          </div>
+
+          <div class='post-footer'>
+            <div class='post-footer-line post-footer-line-1'>
+              <span class='post-author vcard'>
+                <b:if cond='data:top.showAuthor'>
+                  <b:if cond='data:post.authorProfileUrl'>
+                    <span class='fn'>
+                      <a expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
+                        <data:post.author/>
+                      </a>
+                    </span>
+                  <b:else/>
+                    <span class='fn'><data:post.author/></span>
+                  </b:if>
+                </b:if>
+              </span>
+
+              <span class='post-timestamp'>
+                <b:if cond='data:top.showTimestamp'>
+                  <data:top.timestampLabel/>
+                  <b:if cond='data:post.url'>
+                    <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr></a>
+                  </b:if>
+                </b:if>
+              </span>
+
+              <span class='post-comment-link'>
+                <b:if cond='data:blog.pageType != &quot;item&quot;'>
+                  <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+                    <b:if cond='data:post.allowComments'>
+                      <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+                    </b:if>
+                  </b:if>
+                </b:if>
+              </span>
+            </div>
+
+            <div class='post-footer-line post-footer-line-2'>
+              <b:if cond='data:top.showMobileShare'>
+                <div class='mobile-link-button goog-inline-block' id='mobile-share-button'>
+                  <a href='javascript:void(0);'><data:shareMsg/></a>
+                </div>
+              </b:if>
+              <b:if cond='data:top.showDummy'>
+                <div class='goog-inline-block dummy-container'><data:post.dummyTag/></div>
+              </b:if>
+            </div>
+
+          </div>
+        </div>
+
+        <b:if cond='data:blog.pageType != &quot;index&quot;'>
+          <b:if cond='data:post.showThreadedComments'>
+            <b:include data='post' name='threaded_comments'/>
+          <b:else/>
+            <b:include data='post' name='comments'/>
+          </b:if>
+        </b:if>
+
+      </div>
+    </div>
+  </div>
+</b:includable>
+    <b:includable id='nextprev'>
+  <div class='blog-pager' id='blog-pager'>
+    <b:if cond='data:newerPageUrl'>
+      <span id='blog-pager-newer-link'>
+      <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/></a>
+      </span>
+    </b:if>
+	
+    <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
+	
+    <b:if cond='data:olderPageUrl'>
+      <span id='blog-pager-older-link'>
+      <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'><data:olderPageTitle/></a>
+      </span>
+    </b:if>
+
+    <b:if cond='data:mobileLinkUrl'>
+      <div class='blog-mobile-link'>
+        <a expr:href='data:mobileLinkUrl'><data:mobileLinkMsg/></a>
+      </div>
+    </b:if>
+
+  </div>
+  <div class='clear'/>
+</b:includable>
+    <b:includable id='post' var='post'>
+<div class='four columns post_col masonry-brick'>
+<div class='post_item'>
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+<b:if cond='data:post.title'>
+<h3 style='display:none'>
+<b:if cond='data:post.link'>
+<a expr:href='data:post.link' expr:title='data:post.title'><data:post.title/></a>
+<b:else/>
+<b:if cond='data:post.url'>
+<a expr:href='data:post.url' expr:title='data:post.title'><data:post.title/></a>
+<b:else/><data:post.title/>
+</b:if>
+</b:if>
+</h3>
+</b:if>
+<b:else/>
+<h1><b:if cond='data:post.link'><a expr:href='data:post.link' expr:title='data:post.title'><data:post.title/></a><b:else/><data:post.title/>
+</b:if></h1>
+<div class='post_meta'>
+<span class='user'>
+<b:if cond='data:top.showAuthor'>
+by
+<span style='color: #E74C3C;'><data:post.author/></span>
+</b:if>
+</span>
+<span class='time'>
+<b:if cond='data:top.showTimestamp'>
+<b:if cond='data:post.url'>
+<data:post.timestamp/>
+</b:if>
+</b:if>
+</span>
+<span class='comment'>
+<b:if cond='data:post.allowComments'>
+<a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+</b:if>
+</span>
+</div>
+</b:if>
+
+<div class='post-body'>
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+ <span expr:id='&quot;p&quot; + data:post.id'><data:post.body/></span>
+  <script type='text/javascript'>var x=&quot;<data:post.title/>&quot;,y=&quot;<data:post.url/>&quot;,z=&quot;<data:post.author/>&quot;,t=&quot;<data:post.timestamp/>&quot;;readmore(&quot;p<data:post.id/>&quot;)</script><b:else/><data:post.body/></b:if>
+</div>
+<div class='clear'/>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<div class='post-footer'>
+<div class='post_tag'>
+        <b:if cond='data:post.labels'>
+          <data:postLabelsLabel/>
+          <b:loop values='data:post.labels' var='label'>
+            <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+          </b:loop>
+        </b:if>
+</div> 
+
+<div class='post-share-buttons goog-inline-block'>
+        <b:if cond='data:post.sharePostUrl'>
+          <b:include data='post' name='shareButtons'/>
+        </b:if>
+</div>
+
+<span class='post-icons'>
+        <!-- email post links -->
+        <b:if cond='data:post.emailPostUrl'>
+          <span class='item-action'>
+          <a expr:href='data:post.emailPostUrl' expr:title='data:top.emailPostMsg'>
+              <img alt='' class='icon-action' height='13' src='http://img1.blogblog.com/img/icon18_email.gif' width='18'/>
+          </a>
+          </span>
+        </b:if>
+        <!-- quickedit pencil -->
+        <b:include data='post' name='postQuickEdit'/>
+      </span>
+
+      <span class='post-location'>
+        <b:if cond='data:top.showLocation'>
+          <b:if cond='data:post.location'>
+            <data:postLocationLabel/>
+            <a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
+          </b:if>
+        </b:if>
+      </span> 
+    </div>
+</b:if>
+</div>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<div class='post_author'>
+<div class='author_avatar'><div class='small_thumb'><img height='auto' src='http://lh4.googleusercontent.com/-ODQQ3nTVRDI/AAAAAAAAAAI/AAAAAAAAAVg/_HPW_rR-OQg/s512-c/photo.jpg' width='100'/></div></div>
+ <div class='author_wrapper'>
+   <h4>About author: <a href='https://plus.google.com/+CeyronLouis'>Ceyron Louis</a></h4>
+ <p>Cress arugula peanut tigernut wattle seed kombu parsnip. Lotus root mung bean arugula tigernut horseradish endive yarrow gourd. Radicchio cress avocado garlic quandong collard greens.</p></div>
+<div class='clear'/>
+</div>
+
+<div id='related-posts'>
+<script type='text/javascript'>//<![CDATA[
+var ry = '<h3 class="heading-border"><span>Related Posts</span></h3>';
+rn = '<h3 class="heading-border"><span>No related post available</span></h3>';
+rcomment = 'comments';
+rdisable = 'disable comments';
+commentYN = 'yes';
+var dw = '';
+titles = new Array();
+titlesNum = 0;
+urls = new Array();
+timeR = new Array();
+thumb = new Array();
+commentsNum = new Array();
+comments = new Array();
+
+function related_results_labels(_0x4a20x4) {
+    for (var _0x4a20x5 = 0; _0x4a20x5 < _0x4a20x4['feed']['entry']['length']; _0x4a20x5++) {
+        var _0x4a20x6 = _0x4a20x4['feed']['entry'][_0x4a20x5];
+        titles[titlesNum] = _0x4a20x6['title']['$t'];
+        for (var _0x4a20x7 = 0; _0x4a20x7 < _0x4a20x6['link']['length']; _0x4a20x7++) {
+            if ('thr$total' in _0x4a20x6) {
+                commentsNum[titlesNum] = _0x4a20x6['thr$total']['$t'] + ' ' + rcomment;
+            } else {
+                commentsNum[titlesNum] = rdisable;
+            };
+            if (_0x4a20x6['link'][_0x4a20x7]['rel'] == 'alternate') {
+                urls[titlesNum] = _0x4a20x6['link'][_0x4a20x7]['href'];
+                timeR[titlesNum] = _0x4a20x6['published']['$t'];
+                if ('media$thumbnail' in _0x4a20x6) {
+                    thumb[titlesNum] = _0x4a20x6['media$thumbnail']['url'];
+                } else {
+                    thumb[titlesNum] = 'http://lh3.ggpht.com/--Z8SVBQZ4X8/TdDxPVMl_sI/AAAAAAAAAAA/jhAgjCpZtRQ/no-image.png';
+                };
+                titlesNum++;
+                break;
+            };
+        };
+    };
+};
+
+function removeRelatedDuplicates() {
+    var _0x4a20x5 = new Array(0);
+    c = new Array(0);
+    e = new Array(0);
+    f = new Array(0);
+    g = new Array(0);
+    for (var _0x4a20x7 = 0; _0x4a20x7 < urls['length']; _0x4a20x7++) {
+        if (!contains(_0x4a20x5, urls[_0x4a20x7])) {
+            _0x4a20x5['length'] += 1;
+            _0x4a20x5[_0x4a20x5['length'] - 1] = urls[_0x4a20x7];
+            c['length'] += 1;
+            c[c['length'] - 1] = titles[_0x4a20x7];
+            e['length'] += 1;
+            e[e['length'] - 1] = timeR[_0x4a20x7];
+            f['length'] += 1;
+            f[f['length'] - 1] = thumb[_0x4a20x7];
+            g['length'] += 1;
+            g[g['length'] - 1] = commentsNum[_0x4a20x7];
+        };
+    };
+    urls = _0x4a20x5;
+    titles = c;
+    timeR = e;
+    thumb = f;
+    commentsNum = g;
+};
+
+function contains(_0x4a20x5, _0x4a20x6) {
+    for (var _0x4a20x4 = 0; _0x4a20x4 < _0x4a20x5['length']; _0x4a20x4++) {
+        if (_0x4a20x5[_0x4a20x4] == _0x4a20x6) {
+            return true;
+        };
+    };
+    return false;
+};
+
+function printRelatedLabels(_0x4a20x7) {
+    var _0x4a20xb = _0x4a20x7['indexOf']('?m=0');
+    if (_0x4a20xb != -1) {
+        _0x4a20x7 = _0x4a20x7['replace'](/\?m=0/g, '');
+    };
+    for (var _0x4a20x5 = 0; _0x4a20x5 < urls['length']; _0x4a20x5++) {
+        if (urls[_0x4a20x5] == _0x4a20x7) {
+            urls['splice'](_0x4a20x5, 1);
+            titles['splice'](_0x4a20x5, 1);
+            timeR['splice'](_0x4a20x5, 1);
+            thumb['splice'](_0x4a20x5, 1);
+            commentsNum['splice'](_0x4a20x5, 1);
+        };
+    };
+    var _0x4a20x4 = Math['floor']((titles['length'] - 1) * Math['random']());
+    var _0x4a20x5 = 0;
+    if (titles['length'] == 0) {
+        dw += rn;
+    } else {
+        dw += ry;
+        dw += '<ul>';
+        while (_0x4a20x5 < titles['length'] && _0x4a20x5 < 20 && _0x4a20x5 < maxresults) {
+            if (_0x4a20xb != -1) {
+                urls[_0x4a20x4] = urls[_0x4a20x4] + '?m=0';
+            };
+            if (commentYN == 'yes') {
+                comments[_0x4a20x4] = ' - ' + commentsNum[_0x4a20x4];
+            } else {
+                comments[_0x4a20x4] = '';
+            };
+            dw += '<li><div class="pthumb"><a href="' + urls[_0x4a20x4] + '" rel="nofollow"><img alt="' + titles[_0x4a20x4] + '" src="' + thumb[_0x4a20x4]['replace']('/s72-c/', '/w129/') + '"/></a></div><a href="' + urls[_0x4a20x4] + '" rel="nofollow">' + titles[_0x4a20x4] + '</a></li></div>';
+            if (_0x4a20x4 < titles['length'] - 1) {
+                _0x4a20x4++;
+            } else {
+                _0x4a20x4 = 0;
+            };
+            _0x4a20x5++;
+        };
+        dw += '<div class="clear"></div></ul>';
+    };
+    urls['splice'](0, urls['length']);
+    titles['splice'](0, titles['length']);
+    document['getElementById']('related-posts')['innerHTML'] = dw;
+};
+
+//]]></script>
+<b:loop values='data:post.labels' var='label'>
+<script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=related_results_labels&quot;' type='text/javascript'/>
+</b:loop>
+<script type='text/javascript'>var maxresults=4;removeRelatedDuplicates();printRelatedLabels(&#39;<data:post.url/>&#39;);</script>
+</div>
+<div class='clear'/>
+</b:if>
+</div>
+</b:includable>
+    <b:includable id='postQuickEdit' var='post'>
+  <b:if cond='data:post.editUrl'>
+    <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
+      <a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg'>
+        <img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+      </a>
+    </span>
+  </b:if>
+</b:includable>
+    <b:includable id='shareButtons' var='post'>
+  <b:if cond='data:top.showEmailButton'><a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showOrkutButton'><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span></a></b:if><b:if cond='data:top.showDummy'><div class='goog-inline-block dummy-container'><data:post.dummyTag/></div></b:if>
+</b:includable>
+    <b:includable id='status-message'>
+  <b:if cond='data:navMessage'>
+  <div class='status-msg-wrap'>
+    <div class='status-msg-body'>
+      <data:navMessage/>
+    </div>
+  </div>
+  <div class='clear'/>
+  </b:if>
+</b:includable>
+    <b:includable id='threaded-comment-form' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <b:if cond='data:mobile'>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
+    <b:else/>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    </b:if>
+    <data:post.friendConnectJs/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
+    </script>
+  </div>
+</b:includable>
+    <b:includable id='threaded_comment_js' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+
+  <script type='text/javascript'>
+    (function() {
+      var items = <data:post.commentJso/>;
+      var msgs = <data:post.commentMsgs/>;
+      var config = <data:post.commentConfig/>;
+
+// <![CDATA[
+      var cursor = null;
+      if (items && items.length > 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        if (entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + entry.content.$t + '</span>';
+            }
+          }
+        }
+        return entry.content.$t;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data && data.feed && data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author && entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid && pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length < 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              && comment.author.name == config.authorName
+              && comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/delete-comment.g?blogID='
+               + config.blogId + '&postID=' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '210px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox && (commentId !== replyParent)) {
+cancelRep = document.getElementById('bc_0_' + items.length + 'I');
+document.getElementById(domId).insertBefore(cancelRep, null);
+cancelRep.innerHTML = cancelRep.innerHTML.replace(msgs.addComment, 'Cancel reply');
+if ((commentId != replyParent) && (replybox.src.indexOf('&parentID=') == -1)) {
+    cancelRep.style.display = 'inline-block'
+}
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog && window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog && window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]>
+  </script>
+</b:includable>
+    <b:includable id='threaded_comments' var='post'>
+  <div class='comments' id='comments'>
+    <a name='comments'/>
+    <h4><data:post.commentLabelFull/>:</h4>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threaded_comment_js'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threaded-comment-form'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+
+    <div id='backlinks-container'>
+    <div expr:id='data:widget.instanceId + &quot;_backlinks-container&quot;'>
+       <b:if cond='data:post.showBacklinks'>
+         <b:include data='post' name='backlinks'/>
+       </b:if>
+    </div>
+    </div>
+  </div>
+</b:includable>
+  </b:widget>
+</b:section>
+</div>
+</div>
+
+<div id='sidebar-wrapper'>
+<div class='sidebar' id='social-widget-2'>
+<div class='widget widget_socials'>
+<h2>Follow Us</h2>
+<div class='social_wrapper'>
+<p>Were this world an endless plain, and by sailing eastward we could for ever reach new distances</p>
+<div class='social_inner'>
+  <a class='facebook' href='http://facebook.com/alistarbot' title='Facebook'/>
+<a class='twitter' href='https://twitter.com/alistarbot' title='Twitter'/>
+<a class='rss' href='#' title='RSS Feed'/>
+<a class='flickr' href='http://www.flickr.com/photos/#' title='Flickr'/>	
+<a class='youtube' href='https://www.youtube.com/channel/UC8yRj_lNpLKtweYtHbRoeWQ' title='Youtube'/>	
+<a class='vimeo' href='http://vimeo.com/#' title='Vimeo'/>
+<a class='linkedin' href='#' title='Linkedin'/>	
+<a class='tumblr' href='#' title='Tumblr'/>	
+<a class='dribbble tooltip' href='http://dribbble.com/#' title='Dribbble'/>
+<a class='google_plus' href='https://plus.google.com/+CeyronLouis' title='Google_plus'/>
+<a class='pinterest' href='http://pinterest.com/#' title='Pinterest'/>
+<a class='instagram' href='http://instagram.com/#' title='instagram'/>		
+<div class='clear'/>
+</div>
+</div>
+</div>
+</div>
+
+<b:section class='sidebar' id='sidebar' preferred='yes'>
+  <b:widget id='HTML2' locked='false' title='Find us on Facebook' type='HTML'>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+  </b:widget>
+  <b:widget id='Label1' locked='false' title='Labels' type='Label'>
+    <b:includable id='main'>
+  <b:if cond='data:title'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+      <b:loop values='data:labels' var='label'>
+        <li>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+          </b:if>
+        </li>
+      </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts'>
+    <b:includable id='main'>
+<b:if cond='data:title'><h2><data:title/></h2></b:if>
+  <div class='widget-content popular-posts'>
+    <ul>
+      <b:loop values='data:posts' var='post'>
+      <dd>
+        <b:if cond='data:showThumbnails == &quot;false&quot;'>
+          <b:if cond='data:showSnippets == &quot;false&quot;'>
+            <!-- (1) No snippet/thumbnail -->
+            <a expr:href='data:post.href'><data:post.title/></a>
+          <b:else/>
+            <!-- (2) Show only snippets -->
+            <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            <div class='item-snippet'><data:post.snippet/></div>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:showSnippets == &quot;false&quot;'>
+            <!-- (3) Show only thumbnails -->
+            <div class='item-thumbnail-only'>
+              <b:if cond='data:post.thumbnail'>
+                <div class='item-thumbnail'>
+                  <a expr:href='data:post.href' target='_blank'>
+                    <img alt='' border='0' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:width='data:thumbnailSize'/>
+                  </a>
+                </div>
+              </b:if>
+              <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            </div>
+            <div style='clear: both;'/>
+          <b:else/>
+           <!-- (4) Show snippets and thumbnails -->
+        <b:if cond='data:post.thumbnail'>
+            <img expr:alt='data:post.title' expr:src='data:post.thumbnail' height='50' width='50'/>
+<b:else/>
+            <img alt='no image' height='50' src='http://lh4.ggpht.com/_u7a1IFxc4WI/TTjruHJjcfI/AAAAAAAAAk0/i11Oj6i_bHY/s50/no-image.png' width='50'/>
+        </b:if>
+        <a expr:href='data:post.href' expr:title='data:post.snippet' rel='bookmark'><data:post.title/></a>
+            <div style='clear: both;'/>
+          </b:if>
+        </b:if>
+      </dd>
+      </b:loop>
+    </ul>
+  </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='HTML1' locked='false' title='' type='HTML'>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+  </b:widget>
+</b:section>
+</div>
+<div class='clear'/>
+</div> 
+</div> 
+</div>   
+
+
+<script type='text/javascript'>//<![CDATA[
+var ry = '<h3 class="heading-border"><span>Related Posts</span></h3>';
+rn = '<h3 class="heading-border"><span>No related post available</span></h3>';
+rcomment = 'comments';
+rdisable = 'disable comments';
+commentYN = 'yes';
+var dw = '';
+titles = new Array();
+titlesNum = 0;
+urls = new Array();
+timeR = new Array();
+thumb = new Array();
+commentsNum = new Array();
+comments = new Array();
+
+function related_results_labels(_0x4a20x4) {
+    for (var _0x4a20x5 = 0; _0x4a20x5 < _0x4a20x4['feed']['entry']['length']; _0x4a20x5++) {
+        var _0x4a20x6 = _0x4a20x4['feed']['entry'][_0x4a20x5];
+        titles[titlesNum] = _0x4a20x6['title']['$t'];
+        for (var _0x4a20x7 = 0; _0x4a20x7 < _0x4a20x6['link']['length']; _0x4a20x7++) {
+            if ('thr$total' in _0x4a20x6) {
+                commentsNum[titlesNum] = _0x4a20x6['thr$total']['$t'] + ' ' + rcomment;
+            } else {
+                commentsNum[titlesNum] = rdisable;
+            };
+            if (_0x4a20x6['link'][_0x4a20x7]['rel'] == 'alternate') {
+                urls[titlesNum] = _0x4a20x6['link'][_0x4a20x7]['href'];
+                timeR[titlesNum] = _0x4a20x6['published']['$t'];
+                if ('media$thumbnail' in _0x4a20x6) {
+                    thumb[titlesNum] = _0x4a20x6['media$thumbnail']['url'];
+                } else {
+                    thumb[titlesNum] = 'http://lh3.ggpht.com/--Z8SVBQZ4X8/TdDxPVMl_sI/AAAAAAAAAAA/jhAgjCpZtRQ/no-image.png';
+                };
+                titlesNum++;
+                break;
+            };
+        };
+    };
+};
+
+function removeRelatedDuplicates() {
+    var _0x4a20x5 = new Array(0);
+    c = new Array(0);
+    e = new Array(0);
+    f = new Array(0);
+    g = new Array(0);
+    for (var _0x4a20x7 = 0; _0x4a20x7 < urls['length']; _0x4a20x7++) {
+        if (!contains(_0x4a20x5, urls[_0x4a20x7])) {
+            _0x4a20x5['length'] += 1;
+            _0x4a20x5[_0x4a20x5['length'] - 1] = urls[_0x4a20x7];
+            c['length'] += 1;
+            c[c['length'] - 1] = titles[_0x4a20x7];
+            e['length'] += 1;
+            e[e['length'] - 1] = timeR[_0x4a20x7];
+            f['length'] += 1;
+            f[f['length'] - 1] = thumb[_0x4a20x7];
+            g['length'] += 1;
+            g[g['length'] - 1] = commentsNum[_0x4a20x7];
+        };
+    };
+    urls = _0x4a20x5;
+    titles = c;
+    timeR = e;
+    thumb = f;
+    commentsNum = g;
+};
+
+function contains(_0x4a20x5, _0x4a20x6) {
+    for (var _0x4a20x4 = 0; _0x4a20x4 < _0x4a20x5['length']; _0x4a20x4++) {
+        if (_0x4a20x5[_0x4a20x4] == _0x4a20x6) {
+            return true;
+        };
+    };
+    return false;
+};
+
+function printRelatedLabels(_0x4a20x7) {
+    var _0x4a20xb = _0x4a20x7['indexOf']('?m=0');
+    if (_0x4a20xb != -1) {
+        _0x4a20x7 = _0x4a20x7['replace'](/\?m=0/g, '');
+    };
+    for (var _0x4a20x5 = 0; _0x4a20x5 < urls['length']; _0x4a20x5++) {
+        if (urls[_0x4a20x5] == _0x4a20x7) {
+            urls['splice'](_0x4a20x5, 1);
+            titles['splice'](_0x4a20x5, 1);
+            timeR['splice'](_0x4a20x5, 1);
+            thumb['splice'](_0x4a20x5, 1);
+            commentsNum['splice'](_0x4a20x5, 1);
+        };
+    };
+    var _0x4a20x4 = Math['floor']((titles['length'] - 1) * Math['random']());
+    var _0x4a20x5 = 0;
+    if (titles['length'] == 0) {
+        dw += rn;
+    } else {
+        dw += ry;
+        dw += '<ul>';
+        while (_0x4a20x5 < titles['length'] && _0x4a20x5 < 20 && _0x4a20x5 < maxresults) {
+            if (_0x4a20xb != -1) {
+                urls[_0x4a20x4] = urls[_0x4a20x4] + '?m=0';
+            };
+            if (commentYN == 'yes') {
+                comments[_0x4a20x4] = ' - ' + commentsNum[_0x4a20x4];
+            } else {
+                comments[_0x4a20x4] = '';
+            };
+            dw += '<li><div class="pthumb"><a href="' + urls[_0x4a20x4] + '" rel="nofollow"><img alt="' + titles[_0x4a20x4] + '" src="' + thumb[_0x4a20x4]['replace']('/s72-c/', '/w129/') + '"/></a></div><a href="' + urls[_0x4a20x4] + '" rel="nofollow">' + titles[_0x4a20x4] + '</a></li></div>';
+            if (_0x4a20x4 < titles['length'] - 1) {
+                _0x4a20x4++;
+            } else {
+                _0x4a20x4 = 0;
+            };
+            _0x4a20x5++;
+        };
+        dw += '<div class="clear"></div></ul>';
+    };
+    urls['splice'](0, urls['length']);
+    titles['splice'](0, titles['length']);
+    jQuery.easing["jswing"] = jQuery.easing["swing"];
+    jQuery.extend(jQuery.easing, {
+        def: "easeOutQuad",
+        swing: function(x, t, b, c, d) {
+            return jQuery.easing[jQuery.easing.def](x, t, b, c, d)
+        },
+        easeInQuad: function(x, t, b, c, d) {
+            return c * (t /= d) * t + b
+        },
+        easeOutQuad: function(x, t, b, c, d) {
+            return -c * (t /= d) * (t - 2) + b
+        },
+        easeInOutQuad: function(x, t, b, c, d) {
+            if ((t /= d / 2) < 1) return c / 2 * t * t + b;
+            return -c / 2 * (--t * (t - 2) - 1) + b
+        },
+        easeInCubic: function(x, t, b, c, d) {
+            return c * (t /= d) * t * t + b
+        },
+        easeOutCubic: function(x, t, b, c, d) {
+            return c * ((t = t / d - 1) * t * t + 1) + b
+        },
+        easeInOutCubic: function(x, t, b, c, d) {
+            if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
+            return c / 2 * ((t -= 2) * t * t + 2) + b
+        },
+        easeInQuart: function(x, t, b, c, d) {
+            return c * (t /= d) * t * t * t + b
+        },
+        easeOutQuart: function(x, t, b, c, d) {
+            return -c * ((t = t / d - 1) * t * t * t - 1) + b
+        },
+        easeInOutQuart: function(x, t, b, c, d) {
+            if ((t /= d / 2) < 1) return c / 2 * t * t * t * t + b;
+            return -c / 2 * ((t -= 2) * t * t * t - 2) + b
+        },
+        easeInQuint: function(x, t, b, c, d) {
+            return c * (t /= d) * t * t * t * t + b
+        },
+        easeOutQuint: function(x, t, b, c, d) {
+            return c * ((t = t / d - 1) * t * t * t * t + 1) + b
+        },
+        easeInOutQuint: function(x, t, b, c, d) {
+            if ((t /= d / 2) < 1) return c / 2 * t * t * t * t * t + b;
+            return c / 2 * ((t -= 2) * t * t * t * t + 2) + b
+        },
+        easeInSine: function(x, t, b, c, d) {
+            return -c * Math.cos(t / d * (Math.PI / 2)) + c + b
+        },
+        easeOutSine: function(x, t, b, c, d) {
+            return c * Math.sin(t / d * (Math.PI / 2)) + b
+        },
+        easeInOutSine: function(x, t, b, c, d) {
+            return -c / 2 * (Math.cos(Math.PI * t / d) - 1) + b
+        },
+        easeInExpo: function(x, t, b, c, d) {
+            return t == 0 ? b : c * Math.pow(2, 10 * (t / d - 1)) + b
+        },
+        easeOutExpo: function(x, t, b, c, d) {
+            return t == d ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b
+        },
+        easeInOutExpo: function(x, t, b, c, d) {
+            if (t == 0) return b;
+            if (t == d) return b + c;
+            if ((t /= d / 2) < 1) return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
+            return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b
+        },
+        easeInCirc: function(x, t, b, c, d) {
+            return -c * (Math.sqrt(1 - (t /= d) * t) - 1) + b
+        },
+        easeOutCirc: function(x, t, b, c, d) {
+            return c * Math.sqrt(1 - (t = t / d - 1) * t) + b
+        },
+        easeInOutCirc: function(x, t, b, c, d) {
+            if ((t /= d / 2) < 1) return -c / 2 * (Math.sqrt(1 - t * t) - 1) + b;
+            return c / 2 * (Math.sqrt(1 - (t -= 2) * t) + 1) + b
+        },
+        easeInElastic: function(x, t, b, c, d) {
+            var s = 1.70158;
+            var p = 0;
+            var a = c;
+            if (t == 0) return b;
+            if ((t /= d) == 1) return b + c;
+            if (!p) p = d * 0.3;
+            if (a < Math.abs(c)) {
+                a = c;
+                var s = p / 4
+            } else var s = p / (2 * Math.PI) * Math.asin(c / a);
+            return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * 2 * Math.PI / p)) + b
+        },
+        easeOutElastic: function(x, t, b, c, d) {
+            var s = 1.70158;
+            var p = 0;
+            var a = c;
+            if (t == 0) return b;
+            if ((t /= d) == 1) return b + c;
+            if (!p) p = d * 0.3;
+            if (a < Math.abs(c)) {
+                a = c;
+                var s = p / 4
+            } else var s = p / (2 * Math.PI) * Math.asin(c / a);
+            return a * Math.pow(2, -10 * t) * Math.sin((t * d - s) * 2 * Math.PI / p) + c + b
+        },
+        easeInOutElastic: function(x, t, b, c, d) {
+            var s = 1.70158;
+            var p = 0;
+            var a = c;
+            if (t == 0) return b;
+            if ((t /= d / 2) == 2) return b + c;
+            if (!p) p = d * 0.3 * 1.5;
+            if (a < Math.abs(c)) {
+                a = c;
+                var s = p / 4
+            } else var s = p / (2 * Math.PI) * Math.asin(c / a);
+            if (t < 1) return -0.5 * a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * 2 * Math.PI / p) + b;
+            return a * Math.pow(2, -10 * (t -= 1)) * Math.sin((t * d - s) * 2 * Math.PI / p) * 0.5 + c + b
+        },
+        easeInBack: function(x, t, b, c, d, s) {
+            if (s == undefined) s = 1.70158;
+            return c * (t /= d) * t * ((s + 1) * t - s) + b
+        },
+        easeOutBack: function(x, t, b, c, d, s) {
+            if (s == undefined) s = 1.70158;
+            return c * ((t = t / d - 1) * t * ((s + 1) * t + s) + 1) + b
+        },
+        easeInOutBack: function(x, t, b, c, d, s) {
+            if (s == undefined) s = 1.70158;
+            if ((t /= d / 2) < 1) return c / 2 * t * t * (((s *= 1.525) + 1) * t - s) + b;
+            return c / 2 * ((t -= 2) * t * (((s *= 1.525) + 1) * t + s) + 2) + b
+        },
+        easeInBounce: function(x, t, b, c, d) {
+            return c - jQuery.easing.easeOutBounce(x, d - t, 0, c, d) + b
+        },
+        easeOutBounce: function(x, t, b, c, d) {
+            if ((t /= d) < 1 / 2.75) return c * 7.5625 * t * t + b;
+            else if (t < 2 / 2.75) return c * (7.5625 * (t -= 1.5 / 2.75) * t + 0.75) + b;
+            else if (t < 2.5 / 2.75) return c * (7.5625 * (t -= 2.25 / 2.75) * t + 0.9375) + b;
+            else return c * (7.5625 * (t -= 2.625 / 2.75) * t + 0.984375) + b
+        },
+        easeInOutBounce: function(x, t, b, c, d) {
+            if (t < d / 2) return jQuery.easing.easeInBounce(x, t * 2, 0, c, d) * 0.5 + b;
+            return jQuery.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * 0.5 + c * 0.5 + b
+        }
+    });
+    (function(e, t, n) {
+        var r = t.event,
+            i;
+        r.special.smartresize = {
+            setup: function() {
+                t(this).bind("resize", r.special.smartresize.handler)
+            },
+            teardown: function() {
+                t(this).unbind("resize", r.special.smartresize.handler)
+            },
+            handler: function(e, t) {
+                var n = this,
+                    s = arguments;
+                e.type = "smartresize", i && clearTimeout(i), i = setTimeout(function() {
+                    r.dispatch.apply(n, s)
+                }, t === "execAsap" ? 0 : 100)
+            }
+        }, t.fn.smartresize = function(e) {
+            return e ? this.bind("smartresize", e) : this.trigger("smartresize", ["execAsap"])
+        }, t.Mason = function(e, n) {
+            this.element = t(n), this._create(e), this._init()
+        }, t.Mason.settings = {
+            isResizable: !0,
+            isAnimated: !1,
+            animationOptions: {
+                queue: !1,
+                duration: 500
+            },
+            gutterWidth: 0,
+            isRTL: !1,
+            isFitWidth: !1,
+            containerStyle: {
+                position: "relative"
+            }
+        }, t.Mason.prototype = {
+            _filterFindBricks: function(e) {
+                var t = this.options.itemSelector;
+                return t ? e.filter(t).add(e.find(t)) : e
+            },
+            _getBricks: function(e) {
+                var t = this._filterFindBricks(e).css({
+                    position: "absolute"
+                }).addClass("masonry-brick");
+                return t
+            },
+            _create: function(n) {
+                this.options = t.extend(!0, {}, t.Mason.settings, n), this.styleQueue = [];
+                var r = this.element[0].style;
+                this.originalStyle = {
+                    height: r.height || ""
+                };
+                var i = this.options.containerStyle;
+                for (var s in i) this.originalStyle[s] = r[s] || "";
+                this.element.css(i), this.horizontalDirection = this.options.isRTL ? "right" : "left";
+                var o = this.element.css("padding-" + this.horizontalDirection),
+                    u = this.element.css("padding-top");
+                this.offset = {
+                    x: o ? parseInt(o, 10) : 0,
+                    y: u ? parseInt(u, 10) : 0
+                }, this.isFluid = this.options.columnWidth && typeof this.options.columnWidth == "function";
+                var a = this;
+                setTimeout(function() {
+                    a.element.addClass("masonry")
+                }, 0), this.options.isResizable && t(e).bind("smartresize.masonry", function() {
+                    a.resize()
+                }), this.reloadItems()
+            },
+            _init: function(e) {
+                this._getColumns(), this._reLayout(e)
+            },
+            option: function(e, n) {
+                t.isPlainObject(e) && (this.options = t.extend(!0, this.options, e))
+            },
+            layout: function(e, t) {
+                for (var n = 0, r = e.length; n < r; n++) this._placeBrick(e[n]);
+                var i = {};
+                i.height = Math.max.apply(Math, this.colYs);
+                if (this.options.isFitWidth) {
+                    var s = 0;
+                    n = this.cols;
+                    while (--n) {
+                        if (this.colYs[n] !== 0) break;
+                        s++
+                    }
+                    i.width = (this.cols - s) * this.columnWidth - this.options.gutterWidth
+                }
+                this.styleQueue.push({
+                    $el: this.element,
+                    style: i
+                });
+                var o = this.isLaidOut ? this.options.isAnimated ? "animate" : "css" : "css",
+                    u = this.options.animationOptions,
+                    a;
+                for (n = 0, r = this.styleQueue.length; n < r; n++) a = this.styleQueue[n], a.$el[o](a.style, u);
+                this.styleQueue = [], t && t.call(e), this.isLaidOut = !0
+            },
+            _getColumns: function() {
+                var e = this.options.isFitWidth ? this.element.parent() : this.element,
+                    t = e.width();
+                this.columnWidth = this.isFluid ? this.options.columnWidth(t) : this.options.columnWidth || (this.$bricks.outerWidth(!0) || t), this.columnWidth += this.options.gutterWidth, this.cols = Math.floor((t + this.options.gutterWidth) / this.columnWidth), this.cols = Math.max(this.cols, 1)
+            },
+            _placeBrick: function(e) {
+                var n = t(e),
+                    r, i, s, o, u;
+                r = Math.ceil(n.outerWidth(!0) / this.columnWidth), r = Math.min(r, this.cols);
+                if (r === 1) s = this.colYs;
+                else {
+                    i = this.cols + 1 - r, s = [];
+                    for (u = 0; u < i; u++) o = this.colYs.slice(u, u + r), s[u] = Math.max.apply(Math, o)
+                }
+                var a = Math.min.apply(Math, s),
+                    f = 0;
+                for (var l = 0, c = s.length; l < c; l++)
+                    if (s[l] === a) {
+                        f = l;
+                        break
+                    }
+                var h = {
+                    top: a + this.offset.y
+                };
+                h[this.horizontalDirection] = this.columnWidth * f + this.offset.x, this.styleQueue.push({
+                    $el: n,
+                    style: h
+                });
+                var p = a + n.outerHeight(!0),
+                    d = this.cols + 1 - c;
+                for (l = 0; l < d; l++) this.colYs[f + l] = p
+            },
+            resize: function() {
+                var e = this.cols;
+                this._getColumns(), (this.isFluid || this.cols !== e) && this._reLayout()
+            },
+            _reLayout: function(e) {
+                var t = this.cols;
+                this.colYs = [];
+                while (t--) this.colYs.push(0);
+                this.layout(this.$bricks, e)
+            },
+            reloadItems: function() {
+                this.$bricks = this._getBricks(this.element.children())
+            },
+            reload: function(e) {
+                this.reloadItems(), this._init(e)
+            },
+            appended: function(e, t, n) {
+                if (t) {
+                    this._filterFindBricks(e).css({
+                        top: this.element.height()
+                    });
+                    var r = this;
+                    setTimeout(function() {
+                        r._appended(e, n)
+                    }, 1)
+                } else this._appended(e, n)
+            },
+            _appended: function(e, t) {
+                var n = this._getBricks(e);
+                this.$bricks = this.$bricks.add(n), this.layout(n, t)
+            },
+            remove: function(e) {
+                this.$bricks = this.$bricks.not(e), e.remove()
+            },
+            destroy: function() {
+                this.$bricks.removeClass("masonry-brick").each(function() {
+                    this.style.position = "", this.style.top = "", this.style.left = ""
+                });
+                var n = this.element[0].style;
+                for (var r in this.originalStyle) n[r] = this.originalStyle[r];
+                this.element.unbind(".masonry").removeClass("masonry").removeData("masonry"), t(e).unbind(".masonry")
+            }
+        }, t.fn.imagesLoaded = function(e) {
+            function u() {
+                e.call(n, r)
+            }
+
+            function a(e) {
+                var n = e.target;
+                n.src !== s && (t.inArray(n, o) === -1 && (o.push(n), --i <= 0 && (setTimeout(u), r.unbind(".imagesLoaded", a))))
+            }
+            var n = this,
+                r = n.find("img").add(n.filter("img")),
+                i = r.length,
+                s = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",
+                o = [];
+            return i || u(), r.bind("load.imagesLoaded error.imagesLoaded", a).each(function() {
+                var e = this.src;
+                this.src = s, this.src = e
+            }), n
+        };
+        var s = function(t) {
+            e.console && e.console.error(t)
+        };
+        t.fn.masonry = function(e) {
+            if (typeof e == "string") {
+                var n = Array.prototype.slice.call(arguments, 1);
+                this.each(function() {
+                    var r = t.data(this, "masonry");
+                    if (!r) {
+                        s("cannot call methods on masonry prior to initialization; attempted to call method '" + e + "'");
+                        return
+                    }
+                    if (!t.isFunction(r[e]) || e.charAt(0) === "_") {
+                        s("no such method '" + e + "' for masonry instance");
+                        return
+                    }
+                    r[e].apply(r, n)
+                })
+            } else this.each(function() {
+                var n = t.data(this, "masonry");
+                n ? (n.option(e || {}), n._init()) : t.data(this, "masonry", new t.Mason(e, this))
+            });
+            return this
+        }
+    })(window, jQuery);
+    (function($) {
+        $.fn.superfish = function(d) {
+            var e = $.fn.superfish,
+                c = e.c,
+                $arrow = $(['<span class="', c.arrowClass, '"> &#187;</span>'].join("")),
+                over = function() {
+                    var a = $(this),
+                        menu = getMenu(a);
+                    clearTimeout(menu.sfTimer);
+                    a.showSuperfishUl().siblings().hideSuperfishUl()
+                },
+                out = function() {
+                    var a = $(this),
+                        menu = getMenu(a),
+                        o = e.op;
+                    clearTimeout(menu.sfTimer);
+                    menu.sfTimer = setTimeout(function() {
+                        o.retainPath = $.inArray(a[0], o.$path) > -1;
+                        a.hideSuperfishUl();
+                        if (o.$path.length && a.parents(["li.", o.hoverClass].join("")).length < 1) over.call(o.$path)
+                    }, o.delay)
+                },
+                getMenu = function(a) {
+                    var b = a.parents(["ul.", c.menuClass, ":first"].join(""))[0];
+                    e.op = e.o[b.serial];
+                    return b
+                },
+                addArrow = function(a) {
+                    a.addClass(c.anchorClass).append($arrow.clone())
+                };
+            return this.each(function() {
+                var s = this.serial = e.o.length;
+                var o = $.extend({}, e.defaults, d);
+                o.$path = $("li." + o.pathClass, this).slice(0, o.pathLevels).each(function() {
+                    $(this).addClass([o.hoverClass, c.bcClass].join(" ")).filter("li:has(ul)").removeClass(o.pathClass)
+                });
+                e.o[s] = e.op = o;
+                $("li:has(ul)", this)[$.fn.hoverIntent && !o.disableHI ? "hoverIntent" : "hover"](over, out).each(function() {
+                    if (o.autoArrows) addArrow($(">a:first-child", this))
+                }).not("." + c.bcClass).hideSuperfishUl();
+                var b = $("a", this);
+                b.each(function(i) {
+                    var a = b.eq(i).parents("li");
+                    b.eq(i).focus(function() {
+                        over.call(a)
+                    }).blur(function() {
+                        out.call(a)
+                    })
+                });
+                o.onInit.call(this)
+            }).each(function() {
+                var a = [c.menuClass];
+                if (e.op.dropShadows && !($.browser.msie && $.browser.version < 7)) a.push(c.shadowClass);
+                $(this).addClass(a.join(" "))
+            })
+        };
+        var f = $.fn.superfish;
+        f.o = [];
+        f.op = {};
+        f.IE7fix = function() {
+            var o = f.op;
+            if ($.browser.msie && ($.browser.version > 6 && (o.dropShadows && o.animation.opacity != undefined))) this.toggleClass(f.c.shadowClass + "-off")
+        };
+        f.c = {
+            bcClass: "sf-breadcrumb",
+            menuClass: "sf-js-enabled",
+            anchorClass: "sf-with-ul",
+            arrowClass: "sf-sub-indicator",
+            shadowClass: "sf-shadow"
+        };
+        f.defaults = {
+            hoverClass: "sfHover",
+            pathClass: "overideThisToUse",
+            pathLevels: 1,
+            delay: 800,
+            animation: {
+                opacity: "show"
+            },
+            speed: "normal",
+            autoArrows: true,
+            dropShadows: true,
+            disableHI: false,
+            onInit: function() {},
+            onBeforeShow: function() {},
+            onShow: function() {},
+            onHide: function() {}
+        };
+        $.fn.extend({
+            hideSuperfishUl: function() {
+                var o = f.op,
+                    not = o.retainPath === true ? o.$path : "";
+                o.retainPath = false;
+                var a = $(["li.", o.hoverClass].join(""), this).add(this).not(not).removeClass(o.hoverClass).find(">ul").hide().css("visibility", "hidden");
+                o.onHide.call(a);
+                return this
+            },
+            showSuperfishUl: function() {
+                var o = f.op,
+                    sh = f.c.shadowClass + "-off",
+                    $ul = this.addClass(o.hoverClass).find(">ul:hidden").css("visibility", "visible");
+                f.IE7fix.call($ul);
+                o.onBeforeShow.call($ul);
+                $ul.animate(o.animation, o.speed, function() {
+                    f.IE7fix.call($ul);
+                    o.onShow.call($ul)
+                });
+                return this
+            }
+        })
+    })(jQuery);
+    (function($) {
+        $.fn.mobileMenu = function(b) {
+            var c = {
+                    defaultText: "Navigate to...",
+                    className: "select-menu",
+                    subMenuClass: "sub-menu",
+                    subMenuDash: "&ndash;"
+                },
+                settings = $.extend(c, b),
+                el = $(this);
+            this.each(function() {
+                el.find("ul").addClass(settings.subMenuClass);
+                $("<select />", {
+                    "class": settings.className,
+                    "title": settings.defaultText
+                }).insertAfter(el);
+                $("<option />", {
+                    "value": "#",
+                    "text": settings.defaultText
+                }).appendTo("." + settings.className);
+                el.find("a").each(function() {
+                    var a = $(this),
+                        optText = "&nbsp;" + a.text(),
+                        optSub = a.parents("." + settings.subMenuClass),
+                        len = optSub.length,
+                        dash;
+                    if (a.parents("ul").hasClass(settings.subMenuClass)) {
+                        dash = Array(len + 1).join(settings.subMenuDash);
+                        optText = dash + optText
+                    }
+                    $("<option />", {
+                        "value": this.href,
+                        "html": optText,
+                        "selected": this.href == window.location.href
+                    }).appendTo("." + settings.className)
+                });
+                $("." + settings.className).change(function() {
+                    var a = $(this).val();
+                    if (a !== "#") window.location.href = $(this).val()
+                })
+            });
+            return this
+        }
+    })(jQuery);
+    (function(d) {
+        d.flexslider = function(j, l) {
+            var a = d(j),
+                c = d.extend({}, d.flexslider.defaults, l),
+                e = c.namespace,
+                q = "ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch,
+                u = q ? "touchend" : "click",
+                m = "vertical" === c.direction,
+                n = c.reverse,
+                h = 0 < c.itemWidth,
+                s = "fade" === c.animation,
+                t = "" !== c.asNavFor,
+                f = {};
+            d.data(j, "flexslider", a);
+            f = {
+                init: function() {
+                    a.animating = !1;
+                    a.currentSlide = c.startAt;
+                    a.animatingTo = a.currentSlide;
+                    a.atEnd = 0 === a.currentSlide || a.currentSlide === a.last;
+                    a.containerSelector = c.selector.substr(0, c.selector.search(" "));
+                    a.slides = d(c.selector, a);
+                    a.container = d(a.containerSelector, a);
+                    a.count = a.slides.length;
+                    a.syncExists = 0 < d(c.sync).length;
+                    "slide" === c.animation && (c.animation = "swing");
+                    a.prop = m ? "top" : "marginLeft";
+                    a.args = {};
+                    a.manualPause = !1;
+                    var b = a,
+                        g;
+                    if (g = !c.video)
+                        if (g = !s)
+                            if (g = c.useCSS) a: {
+                                g = document.createElement("div");
+                                var p = ["perspectiveProperty", "WebkitPerspective", "MozPerspective", "OPerspective", "msPerspective"],
+                                    e;
+                                for (e in p)
+                                    if (void 0 !== g.style[p[e]]) {
+                                        a.pfx = p[e].replace("Perspective", "").toLowerCase();
+                                        a.prop = "-" + a.pfx + "-transform";
+                                        g = !0;
+                                        break a
+                                    }
+                                g = !1
+                            }
+                    b.transitions = g;
+                    "" !== c.controlsContainer && (a.controlsContainer = 0 < d(c.controlsContainer).length && d(c.controlsContainer));
+                    "" !== c.manualControls && (a.manualControls = 0 < d(c.manualControls).length && d(c.manualControls));
+                    c.randomize && (a.slides.sort(function() {
+                        return Math.round(Math.random()) - 0.5
+                    }), a.container.empty().append(a.slides));
+                    a.doMath();
+                    t && f.asNav.setup();
+                    a.setup("init");
+                    c.controlNav && f.controlNav.setup();
+                    c.directionNav && f.directionNav.setup();
+                    c.keyboard && ((1 === d(a.containerSelector).length || c.multipleKeyboard) && d(document).bind("keyup", function(b) {
+                        b = b.keyCode;
+                        if (!a.animating && (39 === b || 37 === b)) b = 39 === b ? a.getTarget("next") : 37 === b ? a.getTarget("prev") : !1, a.flexAnimate(b, c.pauseOnAction)
+                    }));
+                    c.mousewheel && a.bind("mousewheel", function(b, g) {
+                        b.preventDefault();
+                        var d = 0 > g ? a.getTarget("next") : a.getTarget("prev");
+                        a.flexAnimate(d, c.pauseOnAction)
+                    });
+                    c.pausePlay && f.pausePlay.setup();
+                    c.slideshow && (c.pauseOnHover && a.hover(function() {
+                        !a.manualPlay && (!a.manualPause && a.pause())
+                    }, function() {
+                        !a.manualPause && (!a.manualPlay && a.play())
+                    }), 0 < c.initDelay ? setTimeout(a.play, c.initDelay) : a.play());
+                    q && (c.touch && f.touch());
+                    (!s || s && c.smoothHeight) && d(window).bind("resize focus", f.resize);
+                    setTimeout(function() {
+                        c.start(a)
+                    }, 200)
+                },
+                asNav: {
+                    setup: function() {
+                        a.asNav = !0;
+                        a.animatingTo = Math.floor(a.currentSlide / a.move);
+                        a.currentItem = a.currentSlide;
+                        a.slides.removeClass(e + "active-slide").eq(a.currentItem).addClass(e + "active-slide");
+                        a.slides.click(function(b) {
+                            b.preventDefault();
+                            b = d(this);
+                            var g = b.index();
+                            !d(c.asNavFor).data("flexslider").animating && (!b.hasClass("active") && (a.direction = a.currentItem < g ? "next" : "prev", a.flexAnimate(g, c.pauseOnAction, !1, !0, !0)))
+                        })
+                    }
+                },
+                controlNav: {
+                    setup: function() {
+                        a.manualControls ? f.controlNav.setupManual() : f.controlNav.setupPaging()
+                    },
+                    setupPaging: function() {
+                        var b = 1,
+                            g;
+                        a.controlNavScaffold = d('<ol class="' + e + "control-nav " + e + ("thumbnails" === c.controlNav ? "control-thumbs" : "control-paging") + '"></ol>');
+                        if (1 < a.pagingCount)
+                            for (var p = 0; p < a.pagingCount; p++) g = "thumbnails" === c.controlNav ? '<img src="' + a.slides.eq(p).attr("data-thumb") + '"/>' : "<a>" + b + "</a>", a.controlNavScaffold.append("<li>" + g + "</li>"), b++;
+                        a.controlsContainer ? d(a.controlsContainer).append(a.controlNavScaffold) : a.append(a.controlNavScaffold);
+                        f.controlNav.set();
+                        f.controlNav.active();
+                        a.controlNavScaffold.delegate("a, img", u, function(b) {
+                            b.preventDefault();
+                            b = d(this);
+                            var g = a.controlNav.index(b);
+                            b.hasClass(e + "active") || (a.direction = g > a.currentSlide ? "next" : "prev", a.flexAnimate(g, c.pauseOnAction))
+                        });
+                        q && a.controlNavScaffold.delegate("a", "click touchstart", function(a) {
+                            a.preventDefault()
+                        })
+                    },
+                    setupManual: function() {
+                        a.controlNav = a.manualControls;
+                        f.controlNav.active();
+                        a.controlNav.live(u, function(b) {
+                            b.preventDefault();
+                            b = d(this);
+                            var g = a.controlNav.index(b);
+                            b.hasClass(e + "active") || (g > a.currentSlide ? a.direction = "next" : a.direction = "prev", a.flexAnimate(g, c.pauseOnAction))
+                        });
+                        q && a.controlNav.live("click touchstart", function(a) {
+                            a.preventDefault()
+                        })
+                    },
+                    set: function() {
+                        a.controlNav = d("." + e + "control-nav li " + ("thumbnails" === c.controlNav ? "img" : "a"), a.controlsContainer ? a.controlsContainer : a)
+                    },
+                    active: function() {
+                        a.controlNav.removeClass(e + "active").eq(a.animatingTo).addClass(e + "active")
+                    },
+                    update: function(b, c) {
+                        1 < a.pagingCount && "add" === b ? a.controlNavScaffold.append(d("<li><a>" + a.count + "</a></li>")) : 1 === a.pagingCount ? a.controlNavScaffold.find("li").remove() : a.controlNav.eq(c).closest("li").remove();
+                        f.controlNav.set();
+                        1 < a.pagingCount && a.pagingCount !== a.controlNav.length ? a.update(c, b) : f.controlNav.active()
+                    }
+                },
+                directionNav: {
+                    setup: function() {
+                        var b = d('<ul class="' + e + 'direction-nav"><li><a class="' + e + 'prev" href="#">' + c.prevText + '</a></li><li><a class="' + e + 'next" href="#">' + c.nextText + "</a></li></ul>");
+                        a.controlsContainer ? (d(a.controlsContainer).append(b), a.directionNav = d("." + e + "direction-nav li a", a.controlsContainer)) : (a.append(b), a.directionNav = d("." + e + "direction-nav li a", a));
+                        f.directionNav.update();
+                        a.directionNav.bind(u, function(b) {
+                            b.preventDefault();
+                            b = d(this).hasClass(e + "next") ? a.getTarget("next") : a.getTarget("prev");
+                            a.flexAnimate(b, c.pauseOnAction)
+                        });
+                        q && a.directionNav.bind("click touchstart", function(a) {
+                            a.preventDefault()
+                        })
+                    },
+                    update: function() {
+                        var b = e + "disabled";
+                        1 === a.pagingCount ? a.directionNav.addClass(b) : c.animationLoop ? a.directionNav.removeClass(b) : 0 === a.animatingTo ? a.directionNav.removeClass(b).filter("." + e + "prev").addClass(b) : a.animatingTo === a.last ? a.directionNav.removeClass(b).filter("." + e + "next").addClass(b) : a.directionNav.removeClass(b)
+                    }
+                },
+                pausePlay: {
+                    setup: function() {
+                        var b = d('<div class="' + e + 'pauseplay"><a></a></div>');
+                        a.controlsContainer ? (a.controlsContainer.append(b), a.pausePlay = d("." + e + "pauseplay a", a.controlsContainer)) : (a.append(b), a.pausePlay = d("." + e + "pauseplay a", a));
+                        f.pausePlay.update(c.slideshow ? e + "pause" : e + "play");
+                        a.pausePlay.bind(u, function(b) {
+                            b.preventDefault();
+                            d(this).hasClass(e + "pause") ? (a.manualPause = !0, a.manualPlay = !1, a.pause()) : (a.manualPause = !1, a.manualPlay = !0, a.play())
+                        });
+                        q && a.pausePlay.bind("click touchstart", function(a) {
+                            a.preventDefault()
+                        })
+                    },
+                    update: function(b) {
+                        "play" === b ? a.pausePlay.removeClass(e + "pause").addClass(e + "play").text(c.playText) : a.pausePlay.removeClass(e + "play").addClass(e + "pause").text(c.pauseText)
+                    }
+                },
+                touch: function() {
+                    function b(b) {
+                        k = m ? d - b.touches[0].pageY : d - b.touches[0].pageX;
+                        q = m ? Math.abs(k) < Math.abs(b.touches[0].pageX - e) : Math.abs(k) < Math.abs(b.touches[0].pageY - e);
+                        if (!q || 500 < Number(new Date) - l) b.preventDefault(), !s && (a.transitions && (c.animationLoop || (k /= 0 === a.currentSlide && 0 > k || a.currentSlide === a.last && 0 < k ? Math.abs(k) / r + 2 : 1), a.setProps(f + k, "setTouch")))
+                    }
+
+                    function g() {
+                        j.removeEventListener("touchmove", b, !1);
+                        if (a.animatingTo === a.currentSlide && (!q && null !== k)) {
+                            var h = n ? -k : k,
+                                m = 0 < h ? a.getTarget("next") : a.getTarget("prev");
+                            a.canAdvance(m) && (550 > Number(new Date) - l && 50 < Math.abs(h) || Math.abs(h) > r / 2) ? a.flexAnimate(m, c.pauseOnAction) : s || a.flexAnimate(a.currentSlide, c.pauseOnAction, !0)
+                        }
+                        j.removeEventListener("touchend", g, !1);
+                        f = k = e = d = null
+                    }
+                    var d, e, f, r, k, l, q = !1;
+                    j.addEventListener("touchstart", function(k) {
+                        a.animating ? k.preventDefault() : 1 === k.touches.length && (a.pause(), r = m ? a.h : a.w, l = Number(new Date), f = h && (n && a.animatingTo === a.last) ? 0 : h && n ? a.limit - (a.itemW + c.itemMargin) * a.move * a.animatingTo : h && a.currentSlide === a.last ? a.limit : h ? (a.itemW + c.itemMargin) * a.move * a.currentSlide : n ? (a.last - a.currentSlide + a.cloneOffset) * r : (a.currentSlide + a.cloneOffset) * r, d = m ? k.touches[0].pageY : k.touches[0].pageX, e = m ? k.touches[0].pageX : k.touches[0].pageY, j.addEventListener("touchmove", b, !1), j.addEventListener("touchend", g, !1))
+                    }, !1)
+                },
+                resize: function() {
+                    !a.animating && (a.is(":visible") && (h || a.doMath(), s ? f.smoothHeight() : h ? (a.slides.width(a.computedW), a.update(a.pagingCount), a.setProps()) : m ? (a.viewport.height(a.h), a.setProps(a.h, "setTotal")) : (c.smoothHeight && f.smoothHeight(), a.newSlides.width(a.computedW), a.setProps(a.computedW, "setTotal"))))
+                },
+                smoothHeight: function(b) {
+                    if (!m || s) {
+                        var c = s ? a : a.viewport;
+                        b ? c.animate({
+                            height: a.slides.eq(a.animatingTo).height()
+                        }, b) : c.height(a.slides.eq(a.animatingTo).height())
+                    }
+                },
+                sync: function(b) {
+                    var g = d(c.sync).data("flexslider"),
+                        e = a.animatingTo;
+                    switch (b) {
+                        case "animate":
+                            g.flexAnimate(e, c.pauseOnAction, !1, !0);
+                            break;
+                        case "play":
+                            !g.playing && (!g.asNav && g.play());
+                            break;
+                        case "pause":
+                            g.pause()
+                    }
+                }
+            };
+            a.flexAnimate = function(b, g, p, j, l) {
+                t && (1 === a.pagingCount && (a.direction = a.currentItem < b ? "next" : "prev"));
+                if (!a.animating && ((a.canAdvance(b, l) || p) && a.is(":visible"))) {
+                    if (t && j)
+                        if (p = d(c.asNavFor).data("flexslider"), a.atEnd = 0 === b || b === a.count - 1, p.flexAnimate(b, !0, !1, !0, l), a.direction = a.currentItem < b ? "next" : "prev", p.direction = a.direction, Math.ceil((b + 1) / a.visible) - 1 !== a.currentSlide && 0 !== b) a.currentItem = b, a.slides.removeClass(e + "active-slide").eq(b).addClass(e + "active-slide"), b = Math.floor(b / a.visible);
+                        else return a.currentItem = b, a.slides.removeClass(e + "active-slide").eq(b).addClass(e + "active-slide"), !1;
+                    a.animating = !0;
+                    a.animatingTo = b;
+                    c.before(a);
+                    g && a.pause();
+                    a.syncExists && (!l && f.sync("animate"));
+                    c.controlNav && f.controlNav.active();
+                    h || a.slides.removeClass(e + "active-slide").eq(b).addClass(e + "active-slide");
+                    a.atEnd = 0 === b || b === a.last;
+                    c.directionNav && f.directionNav.update();
+                    b === a.last && (c.end(a), c.animationLoop || a.pause());
+                    if (s) q ? (a.slides.eq(a.currentSlide).css({
+                        opacity: 0,
+                        zIndex: 1
+                    }), a.slides.eq(b).css({
+                        opacity: 1,
+                        zIndex: 2
+                    }), a.slides.unbind("webkitTransitionEnd transitionend"), a.slides.eq(a.currentSlide).bind("webkitTransitionEnd transitionend", function() {
+                        c.after(a)
+                    }), a.animating = !1, a.currentSlide = a.animatingTo) : (a.slides.eq(a.currentSlide).fadeOut(c.animationSpeed, c.easing), a.slides.eq(b).fadeIn(c.animationSpeed, c.easing, a.wrapup));
+                    else {
+                        var r = m ? a.slides.filter(":first").height() : a.computedW;
+                        h ? (b = c.itemWidth > a.w ? 2 * c.itemMargin : c.itemMargin, b = (a.itemW + b) * a.move * a.animatingTo, b = b > a.limit && 1 !== a.visible ? a.limit : b) : b = 0 === a.currentSlide && (b === a.count - 1 && (c.animationLoop && "next" !== a.direction)) ? n ? (a.count + a.cloneOffset) * r : 0 : a.currentSlide === a.last && (0 === b && (c.animationLoop && "prev" !== a.direction)) ? n ? 0 : (a.count + 1) * r : n ? (a.count - 1 - b + a.cloneOffset) * r : (b + a.cloneOffset) * r;
+                        a.setProps(b, "", c.animationSpeed);
+                        if (a.transitions) {
+                            if (!c.animationLoop || !a.atEnd) a.animating = !1, a.currentSlide = a.animatingTo;
+                            a.container.unbind("webkitTransitionEnd transitionend");
+                            a.container.bind("webkitTransitionEnd transitionend", function() {
+                                a.wrapup(r)
+                            })
+                        } else a.container.animate(a.args, c.animationSpeed, c.easing, function() {
+                            a.wrapup(r)
+                        })
+                    }
+                    c.smoothHeight && f.smoothHeight(c.animationSpeed)
+                }
+            };
+            a.wrapup = function(b) {
+                !s && (!h && (0 === a.currentSlide && (a.animatingTo === a.last && c.animationLoop) ? a.setProps(b, "jumpEnd") : a.currentSlide === a.last && (0 === a.animatingTo && (c.animationLoop && a.setProps(b, "jumpStart")))));
+                a.animating = !1;
+                a.currentSlide = a.animatingTo;
+                c.after(a)
+            };
+            a.animateSlides = function() {
+                a.animating || a.flexAnimate(a.getTarget("next"))
+            };
+            a.pause = function() {
+                clearInterval(a.animatedSlides);
+                a.playing = !1;
+                c.pausePlay && f.pausePlay.update("play");
+                a.syncExists && f.sync("pause")
+            };
+            a.play = function() {
+                a.animatedSlides = setInterval(a.animateSlides, c.slideshowSpeed);
+                a.playing = !0;
+                c.pausePlay && f.pausePlay.update("pause");
+                a.syncExists && f.sync("play")
+            };
+            a.canAdvance = function(b, g) {
+                var d = t ? a.pagingCount - 1 : a.last;
+                return g ? !0 : t && (a.currentItem === a.count - 1 && (0 === b && "prev" === a.direction)) ? !0 : t && (0 === a.currentItem && (b === a.pagingCount - 1 && "next" !== a.direction)) ? !1 : b === a.currentSlide && !t ? !1 : c.animationLoop ? !0 : a.atEnd && (0 === a.currentSlide && (b === d && "next" !== a.direction)) ? !1 : a.atEnd && (a.currentSlide === d && (0 === b && "next" === a.direction)) ? !1 : !0
+            };
+            a.getTarget = function(b) {
+                a.direction = b;
+                return "next" === b ? a.currentSlide === a.last ? 0 : a.currentSlide + 1 : 0 === a.currentSlide ? a.last : a.currentSlide - 1
+            };
+            a.setProps = function(b, g, d) {
+                var e, f = b ? b : (a.itemW + c.itemMargin) * a.move * a.animatingTo;
+                e = -1 * function() {
+                    if (h) return "setTouch" === g ? b : n && a.animatingTo === a.last ? 0 : n ? a.limit - (a.itemW + c.itemMargin) * a.move * a.animatingTo : a.animatingTo === a.last ? a.limit : f;
+                    switch (g) {
+                        case "setTotal":
+                            return n ? (a.count - 1 - a.currentSlide + a.cloneOffset) * b : (a.currentSlide + a.cloneOffset) * b;
+                        case "setTouch":
+                            return b;
+                        case "jumpEnd":
+                            return n ? b : a.count * b;
+                        case "jumpStart":
+                            return n ? a.count * b : b;
+                        default:
+                            return b
+                    }
+                }() + "px";
+                a.transitions && (e = m ? "translate3d(0," + e + ",0)" : "translate3d(" + e + ",0,0)", d = void 0 !== d ? d / 1E3 + "s" : "0s", a.container.css("-" + a.pfx + "-transition-duration", d));
+                a.args[a.prop] = e;
+                (a.transitions || void 0 === d) && a.container.css(a.args)
+            };
+            a.setup = function(b) {
+                if (s) a.slides.css({
+                    width: "100%",
+                    "float": "left",
+                    marginRight: "-100%",
+                    position: "relative"
+                }), "init" === b && (q ? a.slides.css({
+                    opacity: 0,
+                    display: "block",
+                    webkitTransition: "opacity " + c.animationSpeed / 1E3 + "s ease",
+                    zIndex: 1
+                }).eq(a.currentSlide).css({
+                    opacity: 1,
+                    zIndex: 2
+                }) : a.slides.eq(a.currentSlide).fadeIn(c.animationSpeed, c.easing)), c.smoothHeight && f.smoothHeight();
+                else {
+                    var g, p;
+                    "init" === b && (a.viewport = d('<div class="' + e + 'viewport"></div>').css({
+                        overflow: "hidden",
+                        position: "relative"
+                    }).appendTo(a).append(a.container), a.cloneCount = 0, a.cloneOffset = 0, n && (p = d.makeArray(a.slides).reverse(), a.slides = d(p), a.container.empty().append(a.slides)));
+                    c.animationLoop && (!h && (a.cloneCount = 2, a.cloneOffset = 1, "init" !== b && a.container.find(".clone").remove(), a.container.append(a.slides.first().clone().addClass("clone")).prepend(a.slides.last().clone().addClass("clone"))));
+                    a.newSlides = d(c.selector, a);
+                    g = n ? a.count - 1 - a.currentSlide + a.cloneOffset : a.currentSlide + a.cloneOffset;
+                    m && !h ? (a.container.height(200 * (a.count + a.cloneCount) + "%").css("position", "absolute").width("100%"), setTimeout(function() {
+                        a.newSlides.css({
+                            display: "block"
+                        });
+                        a.doMath();
+                        a.viewport.height(a.h);
+                        a.setProps(g * a.h, "init")
+                    }, "init" === b ? 100 : 0)) : (a.container.width(200 * (a.count + a.cloneCount) + "%"), a.setProps(g * a.computedW, "init"), setTimeout(function() {
+                        a.doMath();
+                        a.newSlides.css({
+                            width: a.computedW,
+                            "float": "left",
+                            display: "block"
+                        });
+                        c.smoothHeight && f.smoothHeight()
+                    }, "init" === b ? 100 : 0))
+                }
+                h || a.slides.removeClass(e + "active-slide").eq(a.currentSlide).addClass(e + "active-slide")
+            };
+            a.doMath = function() {
+                var b = a.slides.first(),
+                    d = c.itemMargin,
+                    e = c.minItems,
+                    f = c.maxItems;
+                a.w = a.width();
+                a.h = b.height();
+                a.boxPadding = b.outerWidth() - b.width();
+                h ? (a.itemT = c.itemWidth + d, a.minW = e ? e * a.itemT : a.w, a.maxW = f ? f * a.itemT : a.w, a.itemW = a.minW > a.w ? (a.w - d * e) / e : a.maxW < a.w ? (a.w - d * f) / f : c.itemWidth > a.w ? a.w : c.itemWidth, a.visible = Math.floor(a.w / (a.itemW + d)), a.move = 0 < c.move && c.move < a.visible ? c.move : a.visible, a.pagingCount = Math.ceil((a.count - a.visible) / a.move + 1), a.last = a.pagingCount - 1, a.limit = 1 === a.pagingCount ? 0 : c.itemWidth > a.w ? (a.itemW + 2 * d) * a.count - a.w - d : (a.itemW + d) * a.count - a.w - d) : (a.itemW = a.w, a.pagingCount = a.count, a.last = a.count - 1);
+                a.computedW = a.itemW - a.boxPadding
+            };
+            a.update = function(b, d) {
+                a.doMath();
+                h || (b < a.currentSlide ? a.currentSlide += 1 : b <= a.currentSlide && (0 !== b && (a.currentSlide -= 1)), a.animatingTo = a.currentSlide);
+                if (c.controlNav && !a.manualControls)
+                    if ("add" === d && !h || a.pagingCount > a.controlNav.length) f.controlNav.update("add");
+                    else if ("remove" === d && !h || a.pagingCount < a.controlNav.length) h && (a.currentSlide > a.last && (a.currentSlide -= 1, a.animatingTo -= 1)), f.controlNav.update("remove", a.last);
+                c.directionNav && f.directionNav.update()
+            };
+            a.addSlide = function(b, e) {
+                var f = d(b);
+                a.count += 1;
+                a.last = a.count - 1;
+                m && n ? void 0 !== e ? a.slides.eq(a.count - e).after(f) : a.container.prepend(f) : void 0 !== e ? a.slides.eq(e).before(f) : a.container.append(f);
+                a.update(e, "add");
+                a.slides = d(c.selector + ":not(.clone)", a);
+                a.setup();
+                c.added(a)
+            };
+            a.removeSlide = function(b) {
+                var e = isNaN(b) ? a.slides.index(d(b)) : b;
+                a.count -= 1;
+                a.last = a.count - 1;
+                isNaN(b) ? d(b, a.slides).remove() : m && n ? a.slides.eq(a.last).remove() : a.slides.eq(b).remove();
+                a.doMath();
+                a.update(e, "remove");
+                a.slides = d(c.selector + ":not(.clone)", a);
+                a.setup();
+                c.removed(a)
+            };
+            f.init()
+        };
+        d.flexslider.defaults = {
+            namespace: "flex-",
+            selector: ".slides > li",
+            animation: "fade",
+            easing: "swing",
+            direction: "horizontal",
+            reverse: !1,
+            animationLoop: !0,
+            smoothHeight: !1,
+            startAt: 0,
+            slideshow: !0,
+            slideshowSpeed: 7E3,
+            animationSpeed: 600,
+            initDelay: 0,
+            randomize: !1,
+            pauseOnAction: !0,
+            pauseOnHover: !1,
+            useCSS: !0,
+            touch: !0,
+            video: !1,
+            controlNav: !0,
+            directionNav: !0,
+            prevText: "Previous",
+            nextText: "Next",
+            keyboard: !0,
+            multipleKeyboard: !1,
+            mousewheel: !1,
+            pausePlay: !1,
+            pauseText: "Pause",
+            playText: "Play",
+            controlsContainer: "",
+            manualControls: "",
+            sync: "",
+            asNavFor: "",
+            itemWidth: 0,
+            itemMargin: 0,
+            minItems: 0,
+            maxItems: 0,
+            move: 0,
+            start: function() {},
+            before: function() {},
+            after: function() {},
+            end: function() {},
+            added: function() {},
+            removed: function() {}
+        };
+        d.fn.flexslider = function(j) {
+            void 0 === j && (j = {});
+            if ("object" === typeof j) return this.each(function() {
+                var a = d(this),
+                    c = a.find(j.selector ? j.selector : ".slides > li");
+                1 === c.length ? (c.fadeIn(400), j.start && j.start(a)) : void 0 == a.data("flexslider") && new d.flexslider(this, j)
+            });
+            var l = d(this).data("flexslider");
+            switch (j) {
+                case "play":
+                    l.play();
+                    break;
+                case "pause":
+                    l.pause();
+                    break;
+                case "next":
+                    l.flexAnimate(l.getTarget("next"), !0);
+                    break;
+                case "prev":
+                case "previous":
+                    l.flexAnimate(l.getTarget("prev"), !0);
+                    break;
+                default:
+                    "number" === typeof j && l.flexAnimate(j, !0)
+            }
+        }
+    })(jQuery);
+    (function(f, h, $) {
+        var a = "placeholder" in h.createElement("input"),
+            d = "placeholder" in h.createElement("textarea"),
+            i = $.fn,
+            c = $.valHooks,
+            k, j;
+        if (a && d) {
+            j = i.placeholder = function() {
+                return this
+            };
+            j.input = j.textarea = true
+        } else {
+            j = i.placeholder = function() {
+                var l = this;
+                l.filter((a ? "textarea" : ":input") + "[placeholder]").not(".placeholder").bind({
+                    "focus.placeholder": b,
+                    "blur.placeholder": e
+                }).data("placeholder-enabled", true).trigger("blur.placeholder");
+                return l
+            };
+            j.input = a;
+            j.textarea = d;
+            k = {
+                get: function(m) {
+                    var l = $(m);
+                    return l.data("placeholder-enabled") && l.hasClass("placeholder") ? "" : m.value
+                },
+                set: function(m, n) {
+                    var l = $(m);
+                    if (!l.data("placeholder-enabled")) return m.value = n;
+                    if (n == "") {
+                        m.value = n;
+                        if (m != h.activeElement) e.call(m)
+                    } else if (l.hasClass("placeholder")) b.call(m, true, n) || (m.value = n);
+                    else m.value = n;
+                    return l
+                }
+            };
+            a || (c.input = k);
+            d || (c.textarea = k);
+            $(function() {
+                $(h).delegate("form", "submit.placeholder", function() {
+                    var l = $(".placeholder", this).each(b);
+                    setTimeout(function() {
+                        l.each(e)
+                    }, 10)
+                })
+            });
+            $(f).bind("beforeunload.placeholder", function() {
+                $(".placeholder").each(function() {
+                    this.value = ""
+                })
+            })
+        }
+
+        function g(m) {
+            var l = {},
+                n = /^jQuery\d+$/;
+            $.each(m.attributes, function(p, o) {
+                if (o.specified && !n.test(o.name)) l[o.name] = o.value
+            });
+            return l
+        }
+
+        function b(m, n) {
+            var l = this,
+                o = $(l);
+            if (l.value == o.attr("placeholder") && o.hasClass("placeholder"))
+                if (o.data("placeholder-password")) {
+                    o = o.hide().next().show().attr("id", o.removeAttr("id").data("placeholder-id"));
+                    if (m === true) return o[0].value = n;
+                    o.focus()
+                } else {
+                    l.value = "";
+                    o.removeClass("placeholder");
+                    l == h.activeElement && l.select()
+                }
+        }
+
+        function e() {
+            var q, l = this,
+                p = $(l),
+                m = p,
+                o = this.id;
+            if (l.value == "") {
+                if (l.type == "password") {
+                    if (!p.data("placeholder-textinput")) {
+                        try {
+                            q = p.clone().attr({
+                                type: "text"
+                            })
+                        } catch (n) {
+                            q = $("<input>").attr($.extend(g(this), {
+                                type: "text"
+                            }))
+                        }
+                        q.removeAttr("name").data({
+                            "placeholder-password": true,
+                            "placeholder-id": o
+                        }).bind("focus.placeholder", b);
+                        p.data({
+                            "placeholder-textinput": q,
+                            "placeholder-id": o
+                        }).before(q)
+                    }
+                    p = p.removeAttr("id").hide().prev().attr("id", o).show()
+                }
+                p.addClass("placeholder");
+                p[0].value = p.attr("placeholder")
+            } else p.removeClass("placeholder")
+        }
+    })(this, document, jQuery);
+    var $j = jQuery.noConflict();
+    $j(document).ready(function() {
+        $j(".flexslider").flexslider({
+            autoPlay: true,
+            pauseOnAction: false,
+            animation: "fade",
+            start: function(a) {
+                $j(".caption_wrapper").animate({
+                    "bottom": "50px",
+                    "opacity": 1
+                }, 500)
+            },
+            before: function(a) {
+                $j(".caption_wrapper").animate({
+                    "bottom": "0px",
+                    "opacity": 0
+                }, 500)
+            },
+            after: function(a) {
+                $j(".caption_wrapper").animate({
+                    "bottom": "50px",
+                    "opacity": 1
+                }, 500)
+            }
+        });
+        set_slider_height();
+        $j(window).resize(function() {
+            set_slider_height()
+        });
+
+        function set_slider_height() {
+            var a = parseInt($j("#homeslider ul.slides").find("li").attr("data-height"));
+            var b;
+            if ($j(window).width() < 1030) b = a * $j(window).width() / 1030;
+            else b = a;
+            $j("#homeslider ul.slides").find("li").height(b)
+        }
+        var c = $j("#post_grids");
+        c.imagesLoaded(function() {
+            c.masonry({
+                itemSelector: ".post_col"
+            })
+        });
+        $j("#post_grids").masonry({
+            itemSelector: ".post_col",
+            gutterWidth: 0,
+            columnWidth: function(a) {
+                return a / 3
+            }
+        });
+        $j("#Header1_headerimg").load(function() {
+            var a = $j(this).height();
+            var b = a / 2 - 13;
+            $j(".socials").css("padding-top", b)
+        });
+        $j("input, textarea").placeholder();
+        $j("ul.sf-menu").superfish({
+            animation: {
+                opacity: "show"
+            },
+            speed: 200,
+            delay: 10,
+            animation: {
+                opacity: "show",
+                height: "show"
+            }
+        });
+        $j("#top_menu ul.sf-menu").mobileMenu({
+            defaultText: "Navigation ...",
+            className: "select_menu",
+            subMenuDash: "&ndash;"
+        });
+        $j("select.select_menu").each(function() {
+            var a = $j(this).attr("title");
+            if ($j("option:selected", this).val() != "") a = jQuery("option:selected", this).text();
+            $j(this).css({
+                "z-index": 10,
+                "opacity": 0,
+                "-khtml-appearance": "none"
+            }).after('<span class="nav_select">' + a + '<span class="menu_icon_wrapper"><span class="menu_icon"></span></span></span>').change(function() {
+                val = $jj("option:selected", this).text();
+                $j(this).next().text(val)
+            })
+        });
+        $j(".search_btn").click(function() {
+            $j(this).toggleClass("close");
+            $j(".search_box").toggleClass("show");
+            $j(".sf-menu").toggleClass("hide")
+        })
+    });
+    document['getElementById']('related-posts')['innerHTML'] = dw;
+};//]]></script>
+ <style>
+@media only screen and (max-width: 1041px) and (min-width: 791px) { 
+ 
+      .side1{width:180px;}
+img#Header1_headerimg {
+margin-left: 0px;
+}
+      #sidebar-wrap{width:140px;}    
+     .container{margin-left:174px;width:83%;}
+     .row .row{margin:0px;}
+.row .twelve {
+width: 100%;
+}
+}
+
+
+@media only screen and (max-width: 790px) and (min-width: 479px) { 
+.columns {
+width: 92.2%;
+margin-left: 5px;
+}
+     #related-posts{display:none;}
+.side1{width:130px;}
+img#Header1_headerimg {
+width: 124px;
+margin-left: 5px;
+}
+      #sidebar-wrap{width:102px;}    
+     .container{margin-left:116px;margin-top:6px;}
+     .row .row{margin:0px;}
+.row .twelve {
+width: 100%;
+}
+    
+     div.post_item:after{right:0.2rem;}
+     div.post_item:before{right:1rem;}
+
+      .side1{width:165px;}
+img#Header1_headerimg {
+width: 153px;
+}
+      #sidebar-wrap{width:128px;}    
+     .container{margin-left:150px;width:72%;margin-top: 10px;}
+
+     .row .row{margin:0px;}
+    
+     div.post_item:after{right:0.5rem;}
+     div.post_item:before{right:1.3rem;}
+}
+
+
+
+
+
+
+
+
+
+   @media only screen and (max-width: 767px) and (min-width: 500px) { 
+
+.side1{width:150px;}
+img#Header1_headerimg {
+width: 92px;
+margin-left:30px;
+}
+      #sidebar-wrap{width:120px;}    
+     .container{margin-left:135px;width:72%;margin-top: 10px;}
+
+     .row .row{margin:0px;}
+     
+     div.post_item:after{right:0.5rem;}
+     div.post_item:before{right:1.3rem;}
+
+}
+
+   @media only screen and (max-width: 1024px) and (min-width: 768px) {
+
+     .container{width:80%;margin-left: 154px;}
+     #sidebar-wrapper{display:none;}
+.row .twelve {
+width: 100%;
+}
+.container {
+width: 77%;
+margin-left: 170px;
+}
+     .columns{width:90%;}
+     #related-posts ul li{width:19%;}
+     .post-body img{width:100%;}
+div.post_item:after {
+right: 0.2rem;
+}
+
+div.post_item:before {
+right: 1.1rem;
+}
+
+
+
+}
+
+@media only screen and (max-width: 481px) and (min-width: 320px){
+.side1 {
+       width: 100px;}
+#sidebar-wrap {
+width: 72px;
+}
+div#sidebar {
+margin: -13px;
+width: 119%;
+}
+     .post_item, #comments{margin-right: -27px;}
+     #main-menu li{font-size: 14px;}
+img#Header1_headerimg {
+width: 100px;
+margin-left: 0px;
+}
+.container {
+margin-left:91px;
+width: 71%;
+margin-top: 5px;
+}
+
+     .post_meta span.user{float:left;}
+     .post-share-buttons{display:none;}
+     #related-posts{display:none;}
+     .goog-inline-block{display:none;}
+     div.post-share-buttons.goog-inline-block{display:none;}
+.row .twelve {
+width: 88%;
+}
+}   
+
+
+
+   @media only screen and (max-width: 321px){
+.side1 {
+       width: 100px;}
+#sidebar-wrap {
+width: 72px;
+}
+div#sidebar {
+margin: -13px;
+width: 119%;
+}
+     .post_item, #comments{margin-right: -27px;}
+     #main-menu li{font-size: 14px;}
+img#Header1_headerimg {
+width: 100px;
+margin-left: 0px;
+}
+.container {
+margin-left:91px;
+width: 71%;
+margin-top: 5px;
+}
+
+     .post_meta span.user{float:left;}
+     .post-share-buttons{display:none;}
+     #related-posts{display:none;}
+     .goog-inline-block{display:none;}
+ div.post-share-buttons.goog-inline-block{display:none;}
+.row .twelve {
+width: 88%;
+}
+
+
+
+}   
+
+ 
+</style>
+
+
+</body>
+</html>
